@@ -63,13 +63,13 @@ export default function Navbar() {
 
           {/* Navbar Events */}
 
-          <NavLink className="frame-12">
+          <NavLink className="frame-12" to="/events">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9849?alt=media&token=ea049662-a8df-48ed-a55c-4244c8aadc05"
               alt="Not Found"
               className="home-2"
             />
-            <p className="habit-tracker" to="/events">
+            <p className="habit-tracker" >
               Events
             </p>
           </NavLink>
