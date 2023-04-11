@@ -1,0 +1,52 @@
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --body-medium: "SF Pro";
+  --font-roboto: Roboto;
+  --font-space-grotesk: "Space Grotesk";
+
+  /* font sizes */
+  --body-medium-size: 1.06rem;
+  --callout-bold-size: 1rem;
+  --footnote-medium-size: 0.81rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.88rem;
+
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+  --linear-grey: #7b809a;
+  --linear-dark-blue: #344767;
+  --accent: #51c0b7;
+  --grey-200: #eee;
+  --grey-500: #9e9e9e;
+
+  /* Gaps */
+  --gap-5xl: 1.5rem;
+  --gap-5xs: 0.5rem;
+  --gap-7xs: 0.38rem;
+  --gap-4xs: 0.56rem;
+  --gap-6xl: 1.56rem;
+  --gap-2xs: 0.69rem;
+
+  /* Paddings */
+  --padding-3xs: 0.63rem;
+  --padding-base: 1rem;
+  --padding-xl: 1.25rem;
+
+  /* border radiuses */
+  --br-8xs: 5px;
+  --br-81xl: 100px;
+
+  /* Effects */
+  --effect: 0px 100px 80px rgba(141, 145, 160, 0.02),
+    0px 41.777610778808594px 33.42px rgba(141, 145, 160, 0.03),
+    0px 22.3363094329834px 17.87px rgba(141, 145, 160, 0.04),
+    0px 12.521552085876465px 10.02px rgba(141, 145, 160, 0.04),
+    0px 6.650102138519287px 5.32px rgba(141, 145, 160, 0.05),
+    0px 2.767256498336792px 2.21px rgba(0, 0, 0, 0.07);
+}

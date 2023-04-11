@@ -1,0 +1,128 @@
+/* Freind list home */
+
+p {
+    margin: 0;
+  }
+  
+  .freind-list-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 20.25rem;
+    height: 24.5625rem;
+    box-sizing: border-box;
+  }
+  .frame-74 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.625rem;
+    width: 100%;
+    height: 100%;
+    padding: 1.875rem;
+    border-radius: 0.3125rem;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0rem 6.25rem 5rem rgba(141, 145, 160, 0.02),
+      0rem 2.6113rem 2.0888rem rgba(141, 145, 160, 0.03),
+      0rem 1.3962rem 1.1169rem rgba(141, 145, 160, 0.04),
+      0rem 0.7825rem 0.6262rem rgba(141, 145, 160, 0.04),
+      0rem 0.4156rem 0.3325rem rgba(141, 145, 160, 0.05),
+      0rem 0.1731rem 0.1381rem rgba(0, 0, 0, 0.07);
+  }
+  .frame-86 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .friend-list {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.25rem;
+    line-height: 125%;
+    font-family: SF Pro, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.0056rem;
+  }
+  
+  .frame-149 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .no-content-backup {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .frame-148 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .no-added-friends {
+    color: rgba(0, 0, 0, 1);
+    font-size: 1rem;
+    line-height: 129%;
+    font-family: SF Pro, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.0044rem;
+  }
+  
+  .frame-85 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .add-friends-by-clicking {
+    color: rgba(97, 97, 97, 1);
+    font-size: 1rem;
+    line-height: 131%;
+    font-family: SF Pro, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.0031rem;
+  }
+  
+  .add-friend-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 1.6875rem;
+    height: 100%;
+    border-radius: 0.8438rem;
+    box-sizing: border-box;
+    /* background-color: rgba(199, 162, 195, 1); */
+  }
+
+  .add-friend-btn:hover{
+    background-color: #a989a6;
+  }
+  
+  .button {
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  

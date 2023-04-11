@@ -1,0 +1,132 @@
+.frame-child {
+    position: relative;
+    width: 3.46rem;
+    height: 3.46rem;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .frame-item {
+    border: 0;
+    font-family: var(--callout-bold);
+    font-size: var(--body-medium-size);
+    background-color: var(--grey-200);
+    flex: 1;
+    border-radius: var(--br-81xl);
+    height: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.13rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .ellipse-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .frame-inner {
+    align-self: stretch;
+    width: 100%;
+    overflow: hidden;
+    height: 0.06rem;
+    flex-shrink: 0;
+  }
+  .image {
+    position: relative;
+    font-size: var(--callout-bold-size);
+    line-height: 1.31rem;
+    font-weight: 600;
+    font-family: var(--callout-bold);
+    color: var(--accent);
+    text-align: left;
+  }
+  .imagesmode-icon {
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+  .image-parent {
+    cursor: pointer;
+    border: 1px solid var(--accent);
+    padding: var(--padding-3xs) var(--padding-base);
+    background-color: var(--white);
+    border-radius: var(--br-81xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-4xs);
+  }
+  .image-parent:hover {
+    background-color: #f9f9f9;
+  }
+  .send {
+    position: relative;
+    font-size: var(--callout-bold-size);
+    line-height: 1.31rem;
+    font-weight: 600;
+    font-family: var(--callout-bold);
+    color: var(--white);
+    text-align: left;
+  }
+  .frame-container,
+  .send-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .send-parent {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-3xs) var(--padding-base);
+    background-color: var(--primary);
+    border-radius: var(--br-81xl);
+    overflow: hidden;
+    justify-content: flex-start;
+    gap: var(--gap-4xs);
+  }
+  .send-parent:hover {
+    background-color: #a989a6;
+  }
+  .frame-container {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+  .frame-group,
+  .frame-parent {
+    display: flex;
+    flex-direction: column;
+  }
+  .frame-group {
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-5xl);
+    width: 100%;
+  }
+  .frame-parent {
+    position: relative;
+    border-radius: var(--br-8xs);
+    background-color: var(--white);
+    box-shadow: var(--effect);
+    padding: 1.88rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  @media screen and (max-width: 1200px) {
+    .ellipse-parent {
+      flex-direction: row;
+      gap: var(--gap-5xl);
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+  

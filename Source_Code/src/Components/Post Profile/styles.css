@@ -1,0 +1,43 @@
+.image-product {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .details,
+  .title {
+    position: relative;
+    line-height: 140%;
+    text-decoration: none;
+  }
+  .title {
+    font-weight: 700;
+    color: inherit;
+  }
+  .details {
+    font-size: 0.75rem;
+    color: var(--linear-grey);
+  }
+  .image-product-parent,
+  .title-parent {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .title-parent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.38rem;
+  }
+  .image-product-parent {
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-5xs);
+    text-align: left;
+    font-size: 0.88rem;
+    color: var(--linear-dark-blue);
+    font-family: var(--font-roboto);
+  }
+  
