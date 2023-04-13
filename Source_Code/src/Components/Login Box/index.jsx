@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from "react";
-import "./styles.css"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 export default function LoginBox(props) {
-
-  const[EmailValue, setEmailValue] = useState('')
-  const[PassValue, setPassValue] = useState('')
+  const [EmailValue, setEmailValue] = useState('');
+  const [PassValue, setPassValue] = useState('');
 
   const { getDataFromSearch } = props;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getDataFromSearch(EmailValue);
-    getDataFromSearch(PassValue);
+    getDataFromSearch({ EmailValue, PassValue });
   };
-  
+
   const handleInputEmailValue = (event) => {
     const { value } = event.target;
     setEmailValue(value);
   };
-  
+
   const handleInputPassValue = (event) => {
     const { value } = event.target;
     setPassValue(value);
@@ -30,7 +29,7 @@ export default function LoginBox(props) {
         <div className="section-headings">
           <div className="box">
             <div className="title-and-contents">
-              <p className="sign-up-to">Login to HappyUs</p>
+              <p className="sign-up-to">Login to Happy Us</p>
             </div>
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4477?alt=media&token=62378672-37ec-46a2-a137-faae8c812a43"
@@ -45,9 +44,7 @@ export default function LoginBox(props) {
           className="spacer-vertical"
         />
         <div className="forms-registration-email-password">
-
           <form>
-
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4484?alt=media&token=bf6e43d3-f6e4-431a-8bd1-4cfbacc30822"
               alt="Not Found"
@@ -65,7 +62,7 @@ export default function LoginBox(props) {
                   className="content clip-contents"
                   placeholder="Enter your email"
                   autoComplete="username"
-                  onChange={handleInputEmailValue} 
+                  onChange={handleInputEmailValue}
                   value={EmailValue}
                 />
               </div>
@@ -89,9 +86,9 @@ export default function LoginBox(props) {
                 <input
                   className="content clip-contents"
                   placeholder="Enter your password"
-                  type={"password"}
+                  type={'password'}
                   autoComplete="new-password"
-                  onChange={handleInputPassValue} 
+                  onChange={handleInputPassValue}
                   value={PassValue}
                 />
               </div>
@@ -119,12 +116,12 @@ export default function LoginBox(props) {
 
             {/* Submit Button */}
 
-            <div className="button-contained clip-contents" onClick={handleSubmit}>
-              <button
-                onClick={handleSubmit}
-                className="base clip-contents"
-              >
-                Sign Up
+            <div
+              className="button-contained clip-contents"
+              onClick={handleSubmit}
+            >
+              <button onClick={handleSubmit} className="base clip-contents">
+                Login
               </button>
             </div>
 
@@ -136,10 +133,10 @@ export default function LoginBox(props) {
         <p className="or">or</p>
       </div>
       <p className="already-have-an-account">
-        Aren't registered?{" "}
-        <a className="span">
+        Aren't registered?{' '}
+        <Link className="span" to="/signup">
           Sign Up
-        </a>{" "}
+        </Link>{' '}
         to our services.
       </p>
     </div>

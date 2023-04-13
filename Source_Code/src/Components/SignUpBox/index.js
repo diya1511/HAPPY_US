@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 export default function SignUpBox(props) {
@@ -11,31 +12,22 @@ export default function SignUpBox(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getDataFromSearch(NameValue);
-    getDataFromSearch(EmailValue);
-    getDataFromSearch(PassValue);
-    getDataFromSearch(ConfirmPassValue);
+    getDataFromSearch({ NameValue, EmailValue, PassValue, ConfirmPassValue });
   };
 
   const handleInputNameValue = (event) => {
     const { value } = event.target;
-    //Set the updated value
     setNameValue(value);
-    //console.log(value)
   };
 
   const handleInputEmailValue = (event) => {
     const { value } = event.target;
-    //Set the updated value
     setEmailValue(value);
-    //console.log(value)
   };
 
   const handleInputPassValue = (event) => {
     const { value } = event.target;
-    //Set the updated value
     setPassValue(value);
-    //console.log(value)
   };
 
   const handleInputConfirmPassValue = (event) => {
@@ -51,7 +43,7 @@ export default function SignUpBox(props) {
         <div className="section-headings">
           <div className="box">
             <div className="title-and-contents">
-              <p className="sign-up-to">Sign Up to HappyUs</p>
+              <p className="sign-up-to">Sign Up to Happy Us</p>
             </div>
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4477?alt=media&token=62378672-37ec-46a2-a137-faae8c812a43"
@@ -80,21 +72,14 @@ export default function SignUpBox(props) {
                   onChange={handleInputNameValue}
                   value={NameValue}
                 />
-                {/* <div className="content clip-contents">
-                <p className="value">example@gmail.com</p>
-              </div> */}
               </div>
             </div>
-
-            {/* Name Input */}
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4484?alt=media&token=bf6e43d3-f6e4-431a-8bd1-4cfbacc30822"
               alt="Not Found"
               className="spacer-vertical-1"
             />
-
-            {/* Email Input */}
 
             <div className="text-field-outlined">
               <div className="input">
@@ -108,21 +93,14 @@ export default function SignUpBox(props) {
                   onChange={handleInputEmailValue}
                   value={EmailValue}
                 />
-                {/* <div className="content clip-contents">
-                <p className="value">example@gmail.com</p>
-              </div> */}
               </div>
             </div>
-
-            {/* Email Input */}
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4484?alt=media&token=bf6e43d3-f6e4-431a-8bd1-4cfbacc30822"
               alt="Not Found"
               className="spacer-vertical-1"
             />
-
-            {/* Password Input */}
 
             <div className="text-field-outlined-1">
               <div className="input-1">
@@ -137,21 +115,14 @@ export default function SignUpBox(props) {
                   onChange={handleInputPassValue}
                   value={PassValue}
                 />
-                {/* <div className="content-2 clip-contents">
-                <p className="value-1">**********</p>   
-              </div> */}
               </div>
             </div>
-
-            {/* Password Input */}
 
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4484?alt=media&token=bf6e43d3-f6e4-431a-8bd1-4cfbacc30822"
               alt="Not Found"
               className="spacer-vertical-1"
             />
-
-            {/* Confirm Password Input */}
 
             <div className="text-field-outlined-1">
               <div className="input-1">
@@ -166,9 +137,6 @@ export default function SignUpBox(props) {
                   onChange={handleInputConfirmPassValue}
                   value={ConfirmPassValue}
                 />
-                {/* <div className="content-2 clip-contents">
-                <p className="value-1">**********</p>   
-              </div> */}
               </div>
             </div>
 
@@ -179,31 +147,8 @@ export default function SignUpBox(props) {
               alt="Not Found"
               className="spacer-vertical-2"
             />
-            <div className="frame-59">
-              {/* <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4488?alt=media&token=a18b2f83-2fdd-48ea-8c43-f46996731ed1"
-              alt="Not Found"
-              className="checkbox"
-            /> */}
 
-              <input type="checkbox" className="checkbox" />
-
-              <p className="agree-to-terms-and-condi">
-                Agree to Terms and Conditions
-              </p>
-            </div>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4490?alt=media&token=60b48f9e-91e0-497f-8ee7-a2903f03a614"
-              alt="Not Found"
-              className="spacer-vertical-3"
-            />
-
-            {/* Submit Button */}
-
-            <div
-              className="button-contained clip-contents"
-              onClick={handleSubmit}
-            >
+            <div className="button-contained clip-contents">
               <button onClick={handleSubmit} className="base clip-contents">
                 Sign Up
               </button>
@@ -217,7 +162,11 @@ export default function SignUpBox(props) {
         <p className="or">or</p>
       </div>
       <p className="already-have-an-account">
-        Already have an account? <p className="span">Log In</p> to continue.
+        Already have an account?{' '}
+        <Link className="span" to="/login">
+          Log In
+        </Link>{' '}
+        to continue.
       </p>
     </div>
   );

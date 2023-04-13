@@ -1,16 +1,15 @@
-// import Frame60 from '../../Components/Login Box';
 import SignUpBox from '../../Components/SignUpBox';
 import './styles.css';
 
 const Signuppage = (props) => {
-  const getDataFromSearch = (getData) => {
+  const getData = (getData) => {
     console.log(getData);
   };
 
   return (
     <div className="background">
       <div className="Signuppage">
-        <SignUpBox getDataFromSearch={getDataFromSearch} />
+        <SignUpBox getDataFromSearch={getData} />
       </div>
     </div>
   );
