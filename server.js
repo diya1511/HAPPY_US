@@ -1,18 +1,24 @@
 const mongoose = require('mongoose');
+const express = require('express');
 const dotenv = require('dotenv');
+const authRoutes = require('./routes/authRoutes');
+const cors = require('cors');
+const morgan = require('morgan');
+const app = express();
 
-dotenv.config({ path: './config.env' });
-const app = require('./app');
+dotenv.config();
 
-
-
-mongoose.connect(
-  'mongodb+srv://HappyUs:happyus@cluster0.wc1ighv.mongodb.net/?retryWrites=true&w=majority'
-);
+mongoose.connect(process.env.REACT_APP_DATABASE, { useNewUrlParser: true });
 console.log('DB connection successful!');
 
+//middlewares
+app.use(cors());
+app.use(express.json());
+app.use(morgan('dev'));
 
-const port = process.env.PORT || 3001;
+//routes
+app.use('/api/v1/auth', authRoutes);
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
