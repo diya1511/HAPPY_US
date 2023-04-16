@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
@@ -11,17 +12,13 @@ export default function SignUpBox(props) {
   const navigate = useNavigate();
   // const { getDataFromSearch } = props;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8080/api/v1/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
+      const res = await axios.post('api/v1/auth/signup', {
+        name,
+        email,
+        password,
       });
       if (res.data.success) {
         toast.success(res.data.message);
@@ -31,6 +28,7 @@ export default function SignUpBox(props) {
       }
     } catch (error) {
       console.log(error);
+      toast.error('Something went wrong');
     }
   };
 
@@ -125,10 +123,7 @@ export default function SignUpBox(props) {
                   className="spacer-vertical-2"
                 />{' '}
                 <div className="button-contained clip-contents">
-                  <button
-                    className="base clip-contents"
-                    onSubmit={handleSubmit}
-                  >
+                  <button className="base clip-contents" onClick={handleSubmit}>
                     Sign Up
                   </button>
                 </div>
@@ -148,6 +143,7 @@ export default function SignUpBox(props) {
           </p>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }

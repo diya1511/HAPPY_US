@@ -4,7 +4,7 @@ import Loginpage from './Pages/loginpage/index';
 import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage/index';
-
+import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <div>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/habit" element={<Habitpage />} />
         <Route path="/signup" element={<SignUpBox />} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
