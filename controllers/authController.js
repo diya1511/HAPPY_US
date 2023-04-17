@@ -22,7 +22,7 @@ exports.signupController = async (req, res) => {
       email,
       password: hashedPassword,
     }).save();
-    res.status(201).send({
+    return res.status(201).json({
       success: true,
       message: 'User registered successfully',
       data: {
@@ -31,7 +31,7 @@ exports.signupController = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.send(500).json({
+    return res.send(500).json({
       success: false,
       message: 'Error in Registration',
       error,

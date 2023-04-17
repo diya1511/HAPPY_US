@@ -10,22 +10,24 @@ export default function SignUpBox(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  // const { getDataFromSearch } = props;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('here');
     try {
-      const res = await axios.post('api/v1/auth/signup', {
-        name,
-        email,
-        password,
-      });
-      if (res.data.success) {
-        toast.success(res.data.message);
-        navigate('/login');
-      } else {
-        toast.error(res.data.message);
-      }
+      await axios
+        .post('http://localhost:8080/api/v1/auth/signup', {
+          name,
+          email,
+          password,
+        })
+        .then((res) => {
+          if (res.data.success === true) {
+            toast.success(res.data.message);
+            navigate('/login');
+          } else {
+            toast.error(res.data.message);
+          }
+        });
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong');
@@ -122,13 +124,12 @@ export default function SignUpBox(props) {
                   alt="Not Found"
                   className="spacer-vertical-2"
                 />{' '}
-                <div className="button-contained clip-contents">
-                  <button className="base clip-contents" onClick={handleSubmit}>
-                    Sign Up
-                  </button>
-                </div>
-                {/* Submit Button */}
               </form>
+              <div className="button-contained clip-contents">
+                <button className="base clip-contents" onClick={handleSubmit}>
+                  Sign Up
+                </button>
+              </div>
             </div>
           </div>
           <div className="frame-53">
