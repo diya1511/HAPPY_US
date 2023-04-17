@@ -2,7 +2,7 @@ import ProgressBar from '../Progress bar';
 import './styles.css';
 import React, { useState } from 'react';
 
-const HabitCounter = () => {
+const HabitCounter = (props) => {
     const [count, setCount] = useState(0);
     const maxLimit = 15; // set the maximum limit of the counter here
     const [percentComplete, setpercentComplete] = useState((count/maxLimit)*100);
