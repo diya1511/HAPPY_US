@@ -1,0 +1,150 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    
+  }
+  
+  .wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .slider{
+    /* position: absolute; */
+    width: 1140px;
+    height: 221.1px;
+    /* background-color: blue; */
+    margin: 50px auto;
+    background-image: url('./header.jpg');
+    object-fit: cover;
+    border-radius: 13px;
+  }
+
+  .eventHeader{
+    /* position: absolute; */
+    width: 245px;
+    height: 43px;
+    margin-right: 888px;
+    /* background-color: green; */
+  }
+
+  .CardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* background-color: red; */
+    /* height: 100px; */
+    width: 1140px;
+    justify-content: space-between;
+    row-gap: 60px;
+  }
+
+  .card{
+    display: flex;
+    flex-wrap: wrap;
+    height: 289px;
+    /* display: flex; */
+    width: 350px;
+    /* gap: /; */
+    /* background-color: yellow; */
+  }
+
+  .cardImg{
+    width: 100%;
+    height: 207.74px;
+    background-image: url('./card.jpg');
+    background-repeat: no-repeat;
+  }
+
+  .imgHeader{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: purple; */
+    height: 28px;
+    width: 100%;
+  }
+
+  .imgText{
+    /* width: 177px; */
+    height: 28px;
+    left: 0px;
+    top: 215.79px;
+    /* margin-top: 7px; */
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.0026em;
+    color: #222222;
+    /* background-color: red   ; */
+  }
+
+  .btnContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .button-70 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8.90041px 10.1719px;
+    gap: 6.36px;
+    min-width: 105px;
+    height: 37px;
+    background: #C7A2C3;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .footer{
+
+    font-family: 'Orkney';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #51C0B7;
+  }
+
+  .likeIcon{
+    fill: red;
+  }
+
+  .eventWrapper{
+    height: 100vh;
+    width: 100wh;
+    background-color:green;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imgContainer{
+    width: 949.08px;
+    height: 567.03px;
+    /* background-color: red; */
+  }
+
+  .container{
+    width: 1231.63px;
+    height: 567.03px;
+    background-color: black;
+  }
+  
+  
