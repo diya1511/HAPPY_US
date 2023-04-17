@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.sliderImg{
+    position: absolute;
+    width: 1131px;
+    height: 150px;
+    left: 330.5px;
+    top: 97.78px;
+    background: url("/public/image\ 1.jpg");
+    border-radius: 5px;
+    background-color: red;
+}
+
+h1{
+    position: absolute;
+    width: 517.08px;
+    height: 41px;
+    left: 330.5px;
+    top: 287.78px;
+
+    font-family: 'SF Pro';
+    font-style: normal;
+    /* font-weight: 510; */
+    font-size: 48px;
+    line-height: 41px;
+    /* identical to box height, or 85% */
+
+    letter-spacing: 0.004em;
+
+    color: #000000;
+}
+
+.mainPara p{
+    position: absolute;
+    width: 1131px;
+    height: 174px;
+    left: 330.5px;
+    top: 368.33px;
+
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    /* or 110% */
+
+    letter-spacing: -0.05em;
+
+    color: #000000;
+
+}
+
+.subHeading h3{
+    margin-top: 25px;
+    position: absolute;
+    width: 517.08px;
+    height: 34px;
+    left: 330.5px;
+    top: 564.31px;
+
+    /* Title 1/Medium */
+
+    font-family: 'SF Pro';
+    font-style: normal;
+    /* font-weight: 510; */
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height, or 121% */
+
+    letter-spacing: 0.0038em;
+
+    color: #000000;
+}
+
+.subPara p{
+    position: absolute;
+    width: 1131px;
+    height: 326px;
+    left: 330.5px;
+    top: 630.3px;
+
+    font-family: 'SF Pro';
+    font-style: normal;
+
+    font-size: 20px;
+    line-height: 30px;
+    /* or 110% */
+
+    letter-spacing: -0.05em;
+
+    color: #000000;;
+}
+
+.arrowBtn{
+    font-size: 40px;
+    position: absolute;
+    left: 22.21%;
+    right: 76.38%;
+    top: 25px;
+    bottom: 92.75%;
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    border: none;
+}
+
+ 

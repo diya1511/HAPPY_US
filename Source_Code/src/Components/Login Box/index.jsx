@@ -6,11 +6,8 @@ export default function LoginBox(props) {
   const [EmailValue, setEmailValue] = useState('');
   const [PassValue, setPassValue] = useState('');
 
-  const { getDataFromSearch } = props;
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    getDataFromSearch({ EmailValue, PassValue });
   };
 
   const handleInputEmailValue = (event) => {
@@ -113,20 +110,12 @@ export default function LoginBox(props) {
               alt="Not Found"
               className="spacer-vertical-3"
             />
-
-            {/* Submit Button */}
-
-            <div
-              className="button-contained clip-contents"
-              onClick={handleSubmit}
-            >
-              <button onClick={handleSubmit} className="base clip-contents">
-                Login
-              </button>
-            </div>
-
-            {/* Submit Button */}
           </form>
+          <div className="button-contained clip-contents">
+            <button onClick={handleSubmit} className="base clip-contents">
+              Login
+            </button>
+          </div>
         </div>
       </div>
       <div className="frame-53">
