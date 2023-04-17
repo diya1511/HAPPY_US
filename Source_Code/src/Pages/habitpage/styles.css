@@ -1,3 +1,23 @@
 .habit-tracker{
-    color: black;
+    padding: 1.25rem;
+    overflow-y: scroll;
+}
+
+.habit-tracker::-webkit-scrollbar {
+    display: none;
+  }
+  .habit-tracker {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.habit-counter{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.habit-counter>*{
+    flex: 40%;
 }
