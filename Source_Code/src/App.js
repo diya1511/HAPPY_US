@@ -4,6 +4,8 @@ import Loginpage from './Pages/loginpage/index';
 import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage/index';
+import Eventpage from './Pages/events/App';
+import Meditationpage from './Pages/meditation/MeditationDetail';
 import { Toaster } from 'react-hot-toast';
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/habit" element={<Habitpage />} />
         <Route path="/signup" element={<SignUpBox />} />
+        <Route path="/events" element={<Eventpage />} />
+        <Route path="/meditation" element={<Meditationpage />} />
       </Routes>
       <Toaster />
     </div>

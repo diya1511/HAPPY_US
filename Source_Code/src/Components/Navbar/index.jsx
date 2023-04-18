@@ -54,7 +54,7 @@ export default function Navbar() {
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9840?alt=media&token=d0868572-0281-4d70-813b-799e9fdf57ab"
               alt="Not Found"
-              className="calendar"
+              className="calendar-nav"
             />
             <p className="habit-tracker-nav">Habit Tracker</p>
           </NavLink>

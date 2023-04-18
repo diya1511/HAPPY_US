@@ -48,7 +48,7 @@ const HabitCounter = () => {
               {count}/{maxLimit}
             </span>
           </div>
-          <button className="container" onClick={handleIncrement}>
+          <button className="container-habit" onClick={handleIncrement}>
             <div className="div1">+</div>
           </button>
         </div>

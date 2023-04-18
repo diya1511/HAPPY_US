@@ -26,8 +26,8 @@ class Calendar extends React.Component {
       'November',
       'December',
     ];
-    const currentMonth = months[currentDate.getMonth()];
-    const currentYear = currentDate.getFullYear();
+    // const currentMonth = months[currentDate.getMonth()];
+    // const currentYear = currentDate.getFullYear();
 
     // create an array of dates for the current week
     const dates = [];
@@ -60,7 +60,9 @@ class Calendar extends React.Component {
           {dates.map((date) => (
             <div
               key={date}
-              className={`date-card ${date.getDate() === currentDate.getDate() ? 'today' : ''}`}
+              className={`date-card ${
+                date.getDate() === currentDate.getDate() ? 'today' : ''
+              }`}
             >
               <div className="day">{date.getDate()}</div>
               <div className="month">{months[date.getMonth()]}</div>
