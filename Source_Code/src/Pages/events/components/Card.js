@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import '../index.css';
+import { Link } from 'react-router-dom';
 const Card = () => {
   return (
     <div className="card">
@@ -11,7 +12,9 @@ const Card = () => {
       </div>
       <div className="btnContainer">
         <div>
-          <button className="button-70">Join now</button>
+          <Link className="button-70" to="/eventdetails">
+            Join now
+          </Link>
         </div>
 
         <div>

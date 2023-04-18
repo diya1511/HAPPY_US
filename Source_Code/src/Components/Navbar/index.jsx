@@ -76,7 +76,7 @@ export default function Navbar() {
 
           {/* Navbar Meditation */}
 
-          <NavLink className="frame-12" to="/mediation">
+          <NavLink className="frame-12" to="/meditation">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9854?alt=media&token=389c4fa2-6212-40c5-a265-2c748bf71b7c"
               alt="Not Found"

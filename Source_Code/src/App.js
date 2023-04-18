@@ -6,6 +6,7 @@ import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage/index';
 import Eventpage from './Pages/events/App';
 import Meditationpage from './Pages/meditation/MeditationDetail';
+import EventDetails from './Pages/event_details/App';
 import { Toaster } from 'react-hot-toast';
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignUpBox />} />
         <Route path="/events" element={<Eventpage />} />
         <Route path="/meditation" element={<Meditationpage />} />
+        <Route path="/eventdetails" element={<EventDetails />} />
       </Routes>
       <Toaster />
     </div>

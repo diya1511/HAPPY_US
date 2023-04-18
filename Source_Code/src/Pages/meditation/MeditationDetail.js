@@ -1,10 +1,10 @@
 import React from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-// import './styles.css';
+import './styles.css';
 
 const MeditationDetail = () => {
   return (
-    <div className="container">
+    <div className="container-meditation">
       <button className="arrowBtn">
         <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
       </button>
