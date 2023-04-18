@@ -14,6 +14,13 @@ const Habitpage = (props) => {
     const [number, setNumber] = useState(0);
 
     const handleSubmit = (getData) => {
+
+      //====================================================//
+
+      // Data obtained from popup - (Title and Max Count for counter)
+
+      //===================================================//
+      console.log(getData.title);
       console.log(getData.countPopUp);
       setTitle(getData.title)
       setNumber(getData.countPopUp)
