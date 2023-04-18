@@ -4,15 +4,39 @@ import Navbar from "../../Components/Navbar";
 import HabitCounter from "../../Components/Habit Counter";
 import FreindListHome from "../../Components/Friend Box Home";
 import Calendar from "../../Components/Habit Calender";
+import PopUp from "../../Components/Habit PopUp";
 
 const Habitpage = (props) => {
 
     const [numComponents, setNumComponents] = useState(0);
+    const [showPopup, setShowPopup] = useState(false);
+    const [title, setTitle] = useState("");
+    const [number, setNumber] = useState(0);
 
-    const handleClick = () => {
+    const handleSubmit = (getData) => {
+      console.log(getData.countPopUp);
+      setTitle(getData.title)
+      setNumber(getData.countPopUp)
+      setShowPopup(false);
+      createHabit();
+    };
+
+    const createHabit = () => {
+      handleClickHabit();
+    }
+
+    const handleClickHabit = () => {
       setNumComponents(numComponents + 1);
     };
-  
+
+    const handleCancel = () => {
+      setShowPopup(false);
+    };
+
+    const handleButtonClick = () => {
+      setShowPopup(true);
+    };
+
     const components = [];
     for (let i = 0; i < numComponents; i++) {
       components.push(<HabitCounter key={i} />);
@@ -21,11 +45,22 @@ const Habitpage = (props) => {
     return (
       <div className="Background">
         <div className="contents">
+        {showPopup && (
+          <div className="popUp-bg">
+            <div className="popUp-habit">
+              <PopUp
+                onClose={() => setShowPopup(false)}
+                onSubmit={handleSubmit}
+                onCancel={handleCancel}
+              />
+            </div> 
+          </div>
+            )}
           <div className="Navbar">
             <Navbar />
           </div>
           <div className="add-btn-container">
-            <button onClick={handleClick} className="send-parent">
+            <button onClick={handleButtonClick} className="send-parent">
                 <div className="send">
                     + Add a Habit
                 </div>
