@@ -56,7 +56,7 @@ export default function Navbar() {
               alt="Not Found"
               className="calendar"
             />
-            <p className="habit-tracker">Habit Tracker</p>
+            <p className="habit-tracker-nav">Habit Tracker</p>
           </NavLink>
 
           {/* Navbar Habit Tracker */}
@@ -69,9 +69,7 @@ export default function Navbar() {
               alt="Not Found"
               className="home-2"
             />
-            <p className="habit-tracker" >
-              Events
-            </p>
+            <p className="event">Events</p>
           </NavLink>
 
           {/* Navbar Events */}
@@ -84,7 +82,7 @@ export default function Navbar() {
               alt="Not Found"
               className="home-3"
             />
-            <p className="habit-tracker">Meditation</p>
+            <p className="meditation">Meditation</p>
           </NavLink>
 
           {/* Navbar Meditation */}
@@ -97,7 +95,7 @@ export default function Navbar() {
               alt="Not Found"
               className="bar-chart"
             />
-            <p className="habit-tracker">Quotes</p>
+            <p className="quotes">Quotes</p>
           </NavLink>
 
           {/* Navbar Meditation */}
@@ -110,7 +108,7 @@ export default function Navbar() {
             alt="Not Found"
             className="ellipse-5"
           />
-          <p className="om-prakash" to="/">
+          <p className="om-prakash-nav" to="/">
             Om Prakash
           </p>
         </div>

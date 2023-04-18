@@ -5,7 +5,9 @@
 p {
   margin: 0;
 }
-
+*{
+  text-decoration: none;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
