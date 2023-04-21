@@ -78,7 +78,7 @@
     display: flex;
     align-items: flex-start;
   }
-  .container {
+  .container-habit {
     cursor: pointer;
     border: 0;
     padding: var(--padding-7xs) var(--padding-3xs);

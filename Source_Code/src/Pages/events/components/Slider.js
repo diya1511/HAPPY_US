@@ -1,10 +1,7 @@
-import React from 'react'
-
+import React from 'react';
+import '../index.css';
 const Slider = () => {
-  return (
-    <div className='slider'>
-    </div>
-  )
-}
+  return <div className="slider"></div>;
+};
 
-export default Slider
+export default Slider;

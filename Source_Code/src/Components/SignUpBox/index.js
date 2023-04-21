@@ -12,7 +12,6 @@ export default function SignUpBox(props) {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('here');
     try {
       await axios
         .post('http://localhost:8080/api/v1/auth/signup', {

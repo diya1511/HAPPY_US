@@ -1,0 +1,98 @@
+.calendar {
+    width: 100%;
+    /* max-width: 43.75rem; */
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .month {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  
+  .year {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .weekdays {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .weekday {
+    width: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #9E9E9E;
+  }
+  
+  .dates {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .date-card {
+    width: 88px;
+    height: 117px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.3125rem;
+    border: none;
+    box-shadow: none;
+    color: #9E9E9E;
+  }
+  
+  .date-card:hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+  }
+  
+  .date-card.today {
+    background-color: #C7A2C3;
+    color: white;
+  }
+  
+  .day {
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  
+  .month {
+    font-size: 1.375rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+  
+  .year {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  

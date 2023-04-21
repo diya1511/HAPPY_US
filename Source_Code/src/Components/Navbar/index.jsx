@@ -54,9 +54,9 @@ export default function Navbar() {
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9840?alt=media&token=d0868572-0281-4d70-813b-799e9fdf57ab"
               alt="Not Found"
-              className="calendar"
+              className="calendar-nav"
             />
-            <p className="habit-tracker">Habit Tracker</p>
+            <p className="habit-tracker-nav">Habit Tracker</p>
           </NavLink>
 
           {/* Navbar Habit Tracker */}
@@ -69,22 +69,20 @@ export default function Navbar() {
               alt="Not Found"
               className="home-2"
             />
-            <p className="habit-tracker" >
-              Events
-            </p>
+            <p className="event">Events</p>
           </NavLink>
 
           {/* Navbar Events */}
 
           {/* Navbar Meditation */}
 
-          <NavLink className="frame-12" to="/mediation">
+          <NavLink className="frame-12" to="/meditation">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9854?alt=media&token=389c4fa2-6212-40c5-a265-2c748bf71b7c"
               alt="Not Found"
               className="home-3"
             />
-            <p className="habit-tracker">Meditation</p>
+            <p className="meditation">Meditation</p>
           </NavLink>
 
           {/* Navbar Meditation */}
@@ -97,7 +95,7 @@ export default function Navbar() {
               alt="Not Found"
               className="bar-chart"
             />
-            <p className="habit-tracker">Quotes</p>
+            <p className="quotes">Quotes</p>
           </NavLink>
 
           {/* Navbar Meditation */}
@@ -110,7 +108,7 @@ export default function Navbar() {
             alt="Not Found"
             className="ellipse-5"
           />
-          <p className="om-prakash" to="/">
+          <p className="om-prakash-nav" to="/">
             Om Prakash
           </p>
         </div>
