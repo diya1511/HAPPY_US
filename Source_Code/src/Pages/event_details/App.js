@@ -1,10 +1,11 @@
 import React from 'react';
-import MedStart from './components/MedStart';
+import EventDetail from './components/EventDetail';
+import './index.css';
 
 const App = () => {
   return (
     <div>
-      <MedStart></MedStart>
+      <EventDetail></EventDetail>
     </div>
   );
 };
