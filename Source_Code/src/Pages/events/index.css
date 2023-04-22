@@ -1,14 +1,17 @@
 *{
     margin: 0px;
     padding: 0px;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
+    background-color: #ffffff;
     /* overflow-x: hidden; */
     
   }
+
+
   
   .wrapper {
     position: relative;
-    /* height: 100vh; */
+    height: 100vh;
     width: 100wh;
     display: flex;
     flex-direction: row;
@@ -32,9 +35,9 @@
 
   .eventHeader{
     /* position: absolute; */
-    width: 300px;
+    width: 245px;
     height: 43px;
-    margin-left: 80px;
+    margin-right: 888px;
     /* background-color: green; */
   }
 

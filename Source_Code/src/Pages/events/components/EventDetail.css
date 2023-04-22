@@ -1,70 +1,50 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+  /* overflow: hidden; */
 }
-
-body{
-    min-height: 100vh;
-    background-color: #ffffff;
-    position: relative;
-}
-
-.container{
-  /* display: flex;
-  flex-direction: column; */
+.detailWrapper{
   height: 100vh;
-  width: 100vw;
+  /* width: 1232px; */
+  background-color: white;
+  position: relative;
+  /* background-color: red; */
+}
+
+.detailSection{
   position: absolute;
   width: 1232px;
   height: 760px;
   left: 280px;
   top: 0px;
-
+  /* background-color: red; */
 }
 
-.mainImg{
+.detailImageContainer{
   position: absolute;
   width: 1231.63px;
   height: 567.03px;
   left: 0.37px;
   top: 0px;
-
-  /* Black */
-
-  background: #000000;
+  background-color: black;
 }
 
-.insideImg{
+.eventImg{
   position: absolute;
   width: 949.08px;
   height: 567.03px;
-  right: 141.46px;
+  left: 141.46px;
   top: 0px;
-  background: url("/public/img1.jpg");
+
+  background: url('/public/mainImg.jpg');
+
 }
 
-.arrowBtn{
-  position: absolute;
-  left: 1.95%;
-  right: 96.75%;
-  top: 3.3%;
-  bottom: 94.51%;
 
-  /* White */
 
-  background:black;
-  color: white;
-  border: none;
-}
 
-.heading{
+.eventTitle{
   position: absolute;
   width: 269px;
   height: 41px;
@@ -87,8 +67,7 @@ body{
   color: #222222;
 }
 
-.authorName{
-  
+.hostName{
   position: absolute;
   width: 108px;
   height: 28px;
@@ -113,7 +92,7 @@ body{
   color: #51C0B7;
 }
 
-.likeBtn{
+.eventLikeBtn{
   box-sizing: border-box;
 
   /* Auto layout */
@@ -125,7 +104,7 @@ body{
   gap: 8px;
 
   position: absolute;
-  width: 106px;
+  /* width: 106px; */
   height: 44px;
   left: 24px;
   top: 688.42px;
@@ -137,9 +116,24 @@ body{
 
   border: 1px solid #C7A2C3;
   border-radius: 100px;
+  gap: 22px;
   font-size: 20px;
 }
 
-.heart{
-  color: red;
+.eventHeartCont{
+  color: #E53935;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
