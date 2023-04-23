@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-
+/* 
 *{
-  /* overflow: hidden; */
-}
+  overflow:visible;
+} */
 .detailWrapper{
   height: 100vh;
   /* width: 1232px; */
@@ -27,7 +27,7 @@
   height: 567.03px;
   left: 0.37px;
   top: 0px;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .eventImg{
@@ -36,13 +36,7 @@
   height: 567.03px;
   left: 141.46px;
   top: 0px;
-<<<<<<< HEAD:Source_Code/src/Pages/events/components/EventDetail.css
-
-  background: url('/public/mainImg.jpg');
-
-=======
   background: url("/public/img1.jpg");
->>>>>>> 40234349f98c2c29d4236ee230bf65b7078512c1:Source_Code/src/Pages/event_details/index.css
 }
 
 

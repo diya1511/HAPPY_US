@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Card({id, image,info,price,name, removeTour})  {
     const[readmore,setReadmore] = useState(false);
@@ -15,7 +15,7 @@ function Card({id, image,info,price,name, removeTour})  {
         
         <div className="card">
 
-            <img src={image} className="image"></img>
+            <img src={image} className="image" alt= 'img' ></img>
 
             <div className="tour-info">
                 <div className="tour-details">

@@ -5,8 +5,8 @@ import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage/index';
 import Eventpage from './Pages/events/App';
-import Meditationpage from './Pages/meditation/MeditationDetail';
-import EventDetails from './Pages/event_details/App';
+import Meditationpage from './Pages/meditation/App';
+import EventDetails from './Pages/events/components/EventDetail';
 import { Toaster } from 'react-hot-toast';
 function App() {
   return (

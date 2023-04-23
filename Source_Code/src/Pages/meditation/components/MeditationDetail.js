@@ -1,23 +1,6 @@
-<<<<<<< HEAD:Source_Code/src/Pages/meditation/components/MeditationDetail.js
-import React from "react";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import './MeditationDetail.css'
-import { Route,Routes,NavLink } from "react-router-dom";
-import Meditation from './Meditation.js'
-
-
-const MeditationDetail = () => {
-  return (
-    <div className="container">
-
-      <NavLink to='/meditation'>
-          <button className="arrowBtn"><AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft></button>
-      </NavLink>
-      
-=======
 import React from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import './styles.css';
+import './MeditationDetail.css';
 
 const MeditationDetail = () => {
   return (
@@ -25,7 +8,6 @@ const MeditationDetail = () => {
       <button className="arrowBtn">
         <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
       </button>
->>>>>>> 40234349f98c2c29d4236ee230bf65b7078512c1:Source_Code/src/Pages/meditation/MeditationDetail.js
 
       <div className="sliderImg"></div>
 
@@ -81,9 +63,9 @@ const MeditationDetail = () => {
         </p>
       </div>
 
-      <Routes>
+      {/* <Routes>
           <Route path='/meditation' element ={<Meditation></Meditation>}></Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 };

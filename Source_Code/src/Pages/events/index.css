@@ -1,12 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-<<<<<<< HEAD
-    box-sizing: border-box;
-    background-color: #ffffff;
-=======
     /* box-sizing: border-box; */
->>>>>>> 40234349f98c2c29d4236ee230bf65b7078512c1
     /* overflow-x: hidden; */
     
   }
@@ -38,10 +33,11 @@
   }
 
   .eventHeader{
-    /* position: absolute; */
-    width: 300px;
+    position: absolute;
+    /* width: 300px; */
     height: 43px;
-    margin-left: 80px;
+    align-items: center;
+    
     /* background-color: green; */
   }
 

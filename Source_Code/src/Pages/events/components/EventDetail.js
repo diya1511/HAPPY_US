@@ -1,8 +1,7 @@
 import React from 'react'
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import { AiTwotoneHeart } from "react-icons/ai";
 import './EventDetail.css';
-import { Link } from 'react-router-dom';
+
 
 const EventDetail = () => {
   return (
@@ -11,9 +10,6 @@ const EventDetail = () => {
 
           
           <div className='detailImageContainer'>
-            <Link >
-            <button className='btn'><AiOutlineArrowLeft/></button>
-            </Link>
             <div className='eventImg'></div>
           </div>
 
