@@ -1,30 +1,52 @@
 import ProgressBar from '../Progress bar';
 import { Link } from 'react-router-dom';
 import './styles.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const HabitCounter = () => {
-  const [count, setCount] = useState(0);
-  const maxLimit = 15; // set the maximum limit of the counter here
-  const [percentComplete, setpercentComplete] = useState(
-    (count / maxLimit) * 100
+const HabitCounter = (props) => {
+  const [count, setCount] = useState(() => {
+    const storedCount = localStorage.getItem(props.habitTitle);
+    return storedCount ? parseInt(storedCount) : 0;
+  });
+  const maxLimit = props.maxCount; // set the maximum limit of the counter here
+  const [percentComplete, setPercentComplete] = useState(
+    Math.trunc((count / maxLimit) * 100)
   );
 
+  useEffect(() => {
+    localStorage.setItem(props.habitTitle, count);
+    props.onCountChange(count);
+  }, [count, props.habitTitle, props.onCountChange]);
+
   const handleIncrement = () => {
-    setCount(count + 1);
-    if (percentComplete !== 100) {
-      setpercentComplete(Math.trunc(((count + 1) / maxLimit) * 100));
-    }
+    setCount((prevCount) => {
+      const newCount = prevCount + 1;
+      setPercentComplete(Math.trunc((newCount / maxLimit) * 100));
+      return newCount;
+    });
+    props.onCountChange(count + 1);
   };
 
   const handleDecrement = () => {
     if (count > 0) {
-      setCount(count - 1);
-      if (count - 1 <= maxLimit) {
-        setpercentComplete(Math.trunc(((count - 1) / maxLimit) * 100));
-      }
+      setCount((prevCount) => {
+        const newCount = prevCount - 1;
+        setPercentComplete(Math.trunc((newCount / maxLimit) * 100));
+        return newCount;
+      });
+      props.onCountChange(count - 1);
     }
   };
+
+  const handleDelete = () => {
+    localStorage.removeItem(props.habitTitle);
+    const index = props.index;
+    props.onDelete(index);
+  };
+
+  useEffect(() => {
+    localStorage.setItem(`countList[${props.index}]`, count);
+  }, [count, props.index]);
 
   const counterColor = count >= maxLimit ? 'green' : 'black'; // set the color to green when the counter reaches its maximum limit
   const counterBG = count >= maxLimit ? '#c6e2e64f' : 'rgba(255, 255, 255, 0)'; // set the color to green when the counter reaches its maximum limit
@@ -35,6 +57,9 @@ const HabitCounter = () => {
         <Link className="exercise" id="habit-id" Exercise>
           Exercise
         </Link>
+        <a className="exercise" id="habit-id" Exercise>
+          {props.habitTitle}
+        </a>
         <div className="frame-group-habit">
           <button className="wrapper" onClick={handleDecrement}>
             <div className="div">-</div>
@@ -50,6 +75,9 @@ const HabitCounter = () => {
           </div>
           <button className="container-habit" onClick={handleIncrement}>
             <div className="div1">+</div>
+          </button>
+          <button onClick={handleDelete} className="delete-button">
+            Delete
           </button>
         </div>
         <div className="progress-bar">

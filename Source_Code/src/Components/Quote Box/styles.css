@@ -1,0 +1,50 @@
+.b {
+    line-height: 2.56rem;
+  }
+  .youre-braver-than {
+    line-height: 2.13rem;
+  }
+  .youre-braver-than-you-believe {
+    font-weight: 500;
+    font-size: 1.75rem;
+  }
+  .youre-braver-than-container {
+    align-self: stretch;
+    position: relative;
+  }
+  .aa-mine,
+  .authorpoet {
+    position: relative;
+    line-height: 1.56rem;
+    font-weight: 500;
+  }
+  .authorpoet {
+    font-size: var(--callout-medium-size);
+    line-height: 1.31rem;
+    color: var(--grey-500);
+  }
+  .aa-mine-parent,
+  .youre-braver-than-you-believe-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+    font-size: var(--title-3-medium-size);
+    color: var(--grey-800);
+  }
+  .youre-braver-than-you-believe-parent {
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--white);
+    width: 100%;
+    flex-direction: column;
+    padding: var(--padding-11xl) 2.5rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+    text-align: left;
+    font-size: var(--font-size-15xl);
+    color: var(--text-color);
+    font-family: var(--callout-medium);
+  }
+  
