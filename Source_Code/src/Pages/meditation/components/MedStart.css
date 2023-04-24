@@ -13,10 +13,11 @@
 
 body{
     min-height: 100vh;
+    align-items: center;
     background-color: #ffffff;
 }
 
-.container{
+.containermeditation{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +114,7 @@ body{
     top: 205px;
 
     opacity: 0.9;
-    background-image: url("/public/Yoga\ with\ face\ masks-amico\ 1.jpg");
+    background-image: url("/public/Yoga with face masks-amico 1.png");
 }
 
 .excerImg{
@@ -124,5 +125,5 @@ body{
     top: 205px;
 
     opacity: 0.9;
-    background-image: url("/public/Running\ wild-rafiki\ 1.jpg");
+    background-image: url("/public/Running wild-rafiki 1.png");
 }

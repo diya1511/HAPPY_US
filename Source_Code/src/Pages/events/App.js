@@ -6,9 +6,10 @@ import './index.css';
 const App = () => {
   return (
     <>
-      <div className="wrapper">
-        <Slider/>
-        <Cards/>
+      <div className="wrapperevent">
+        <Slider />
+        <h1 className="eventHeader">Upcoming Event</h1>
+        <Cards />
       </div>
     </>
   );

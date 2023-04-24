@@ -11,7 +11,7 @@ body{
     background-color: #ffffff;
 }
 
-.container{
+.containermed{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +37,7 @@ body{
     border-radius: 5px;
 }
 
-.cards{
+.cardsmed{
     display: flex;
     /* align-items: center;  */
     justify-content: center;
