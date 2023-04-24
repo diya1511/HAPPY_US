@@ -53,9 +53,9 @@ const HabitCounter = (props) => {
   return (
     <>
       <div className="frame-parent-habit">
-        <a className="exercise" id="habit-id" Exercise>
+        <Link className="exercise" id="habit-id" Exercise>
           {props.habitTitle}
-        </a>
+        </Link>
         <div className="frame-group-habit">
           <button className="wrapper" onClick={handleDecrement}>
             <div className="div">-</div>
@@ -69,7 +69,7 @@ const HabitCounter = (props) => {
               {count}/{maxLimit}
             </span>
           </div>
-          <button className="container" onClick={handleIncrement}>
+          <button className="container-habit" onClick={handleIncrement}>
             <div className="div1">+</div>
           </button>
           <button onClick={handleDelete} className="delete-button">
