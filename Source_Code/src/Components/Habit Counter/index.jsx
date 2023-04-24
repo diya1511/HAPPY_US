@@ -1,5 +1,4 @@
 import ProgressBar from '../Progress bar';
-import { Link } from 'react-router-dom';
 import './styles.css';
 import React, { useState, useEffect } from 'react';
 
@@ -54,9 +53,6 @@ const HabitCounter = (props) => {
   return (
     <>
       <div className="frame-parent-habit">
-        <Link className="exercise" id="habit-id" Exercise>
-          Exercise
-        </Link>
         <a className="exercise" id="habit-id" Exercise>
           {props.habitTitle}
         </a>
@@ -73,7 +69,7 @@ const HabitCounter = (props) => {
               {count}/{maxLimit}
             </span>
           </div>
-          <button className="container-habit" onClick={handleIncrement}>
+          <button className="container" onClick={handleIncrement}>
             <div className="div1">+</div>
           </button>
           <button onClick={handleDelete} className="delete-button">
