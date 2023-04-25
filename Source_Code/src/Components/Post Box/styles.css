@@ -129,4 +129,12 @@
       justify-content: flex-start;
     }
   }
+
+  .add-image-box{
+    width: 100%;
+  }
+
+  .add-img-text{
+    color: var(--accent);
+  }
   
