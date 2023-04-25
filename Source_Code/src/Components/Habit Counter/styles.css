@@ -73,12 +73,12 @@
     color: var(--white);
     text-align: left;
   }
-  .container,
+  .container-habit,
   .frame-group-habit {
     display: flex;
     align-items: flex-start;
   }
-  .container {
+  .container-habit {
     cursor: pointer;
     border: 0;
     padding: var(--padding-7xs) var(--padding-3xs);
@@ -87,10 +87,10 @@
     flex-direction: column;
     justify-content: flex-start;
   }
-  .container:hover {
+  .container-habit:hover {
     background-color: #bb98b7;
   }
-  .container:active {
+  .container-habit:active {
     animation: 1s ease 0s infinite normal none pulsate;
     opacity: 1;
   }

@@ -85,26 +85,26 @@ const Habitpage = (props) => {
     localStorage.setItem("countList", JSON.stringify(newCountList));
   };
   
-  const TIME_LIMIT = 30; // time limit in days
+  // const TIME_LIMIT = 30; // time limit in days
 
-  useEffect(() => {
-    const lastDate = new Date(localStorage.getItem("lastDate"));
-    const currentDate = new Date();
+  // useEffect(() => {
+  //   const lastDate = new Date(localStorage.getItem("lastDate"));
+  //   const currentDate = new Date();
   
-    const diffTime = Math.abs(currentDate.getTime() - lastDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  //   const diffTime = Math.abs(currentDate.getTime() - lastDate.getTime());
+  //   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
-    if (diffDays > TIME_LIMIT) {
-      // Clear local storage and reset state values
-      localStorage.clear();
-      setTitle("");
-      setNumber(0);
-      setTitleList([]);
-      setNumberList([]);
-      setCountList([]);
-      setNumComponents(0);
-    }
-  }, []);
+  //   if (diffDays > TIME_LIMIT) {
+  //     // Clear local storage and reset state values
+  //     localStorage.clear();
+  //     setTitle("");
+  //     setNumber(0);
+  //     setTitleList([]);
+  //     setNumberList([]);
+  //     setCountList([]);
+  //     setNumComponents(0);
+  //   }
+  // }, []);
   
 
   const habitCounters = titleList.map((title, i) => (

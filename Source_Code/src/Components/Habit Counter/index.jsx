@@ -20,7 +20,11 @@ const HabitCounter = (props) => {
   const handleIncrement = () => {
     setCount((prevCount) => {
       const newCount = prevCount + 1;
-      setPercentComplete(Math.trunc((newCount / maxLimit) * 100));
+      let newPercentComplete = Math.trunc((newCount / maxLimit) * 100);
+      if (newPercentComplete > 100) {
+        newPercentComplete = 100;
+      }
+      setPercentComplete(newPercentComplete);
       return newCount;
     });
     props.onCountChange(count + 1);
@@ -30,7 +34,11 @@ const HabitCounter = (props) => {
     if (count > 0) {
       setCount((prevCount) => {
         const newCount = prevCount - 1;
-        setPercentComplete(Math.trunc((newCount / maxLimit) * 100));
+        let newPercentComplete = Math.trunc((newCount / maxLimit) * 100);
+        if (newPercentComplete > 0) {
+          newPercentComplete = 100;
+        }
+        setPercentComplete(newPercentComplete);
         return newCount;
       });
       props.onCountChange(count - 1);
@@ -53,9 +61,9 @@ const HabitCounter = (props) => {
   return (
     <>
       <div className="frame-parent-habit">
-        <Link className="exercise" id="habit-id" Exercise>
+        <a className="exercise" id="habit-id" Exercise>
           {props.habitTitle}
-        </Link>
+        </a>
         <div className="frame-group-habit">
           <button className="wrapper" onClick={handleDecrement}>
             <div className="div">-</div>
