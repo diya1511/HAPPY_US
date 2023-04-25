@@ -73,12 +73,12 @@
     color: var(--white);
     text-align: left;
   }
-  .container-habit,
+  .container-habit-habit,
   .frame-group-habit {
     display: flex;
     align-items: flex-start;
   }
-  .container-habit {
+  .container-habit{
     cursor: pointer;
     border: 0;
     padding: var(--padding-7xs) var(--padding-3xs);

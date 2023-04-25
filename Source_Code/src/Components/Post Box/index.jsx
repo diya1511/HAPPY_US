@@ -1,23 +1,15 @@
-import {
-  EditOutlined,
-  DeleteOutlined,
-} from "@mui/icons-material";
-import {
-  Box,
-  Divider,
-  Typography,
-  IconButton,
-} from "@mui/material";
+import { EditOutlined, DeleteOutlined } from '@mui/icons-material';
+import { Box, Divider, Typography, IconButton } from '@mui/material';
 
-import "./styles.css";
-import "../global.css";
-import Dropzone from "react-dropzone";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state";
-import "../WidgetWrapper";
-import "../FlexBetween";
-import WidgetWrapper from "../WidgetWrapper";
+import './styles.css';
+import '../global.css';
+import Dropzone from 'react-dropzone';
+import { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setPosts } from "state";
+import '../WidgetWrapper';
+import '../FlexBetween';
+import WidgetWrapper from '../WidgetWrapper';
 
 const Postbox = () => {
   // const dispatch = useDispatch();
@@ -25,10 +17,10 @@ const Postbox = () => {
   // const token = useSelector((state) => state.token);
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
-  const [post, setPost] = useState("");
+  const [post, setPost] = useState('');
 
   //==============================================================//
-                              //API//
+  //API//
   //=============================================================//
   // const handlePost = async () => {
   //   const formData = new FormData();
@@ -69,7 +61,7 @@ const Postbox = () => {
               value={post}
             />
           </div>
-          <Divider sx={{ margin: "1.25rem 0" }} className="frame-inner"/>
+          <Divider sx={{ margin: '1.25rem 0' }} className="frame-inner" />
           {isImage && (
             <div className="add-image-box">
               <Box
@@ -90,7 +82,7 @@ const Postbox = () => {
                         border={`2px dashed var(--accent)`}
                         p="1rem"
                         width="94%"
-                        sx={{ "&:hover": { cursor: "pointer" } }}
+                        sx={{ '&:hover': { cursor: 'pointer' } }}
                       >
                         <input {...getInputProps()} />
                         {!image ? (
@@ -105,7 +97,7 @@ const Postbox = () => {
                       {image && (
                         <IconButton
                           onClick={() => setImage(null)}
-                          sx={{ width: "15%" }}
+                          sx={{ width: '15%' }}
                         >
                           <DeleteOutlined />
                         </IconButton>

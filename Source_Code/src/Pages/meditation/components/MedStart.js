@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './MedStart.css';
 const MedStart = () => {
   return (
+  
     <div className="containermeditation">
       <Link className="yoga" to='/meditationstart'>
         <h1 className="medHeading">Meditation</h1>
@@ -12,7 +13,8 @@ const MedStart = () => {
         <h1 className="excerHeading">Exercises</h1>
         <div className="excerImg"></div>
       </div>
-    </div>
+        </div>       
+     
   );
 };
 

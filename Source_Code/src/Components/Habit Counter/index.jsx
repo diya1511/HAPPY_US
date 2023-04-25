@@ -1,5 +1,6 @@
 import ProgressBar from '../Progress bar';
 import './styles.css';
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 const HabitCounter = (props) => {
@@ -12,10 +13,13 @@ const HabitCounter = (props) => {
     Math.trunc((count / maxLimit) * 100)
   );
 
-  useEffect(() => {
-    localStorage.setItem(props.habitTitle, count);
-    props.onCountChange(count);
-  }, [count, props.habitTitle, props.onCountChange]);
+  useEffect(
+    (props) => {
+      localStorage.setItem(props.habitTitle, count);
+      props.onCountChange(count);
+    },
+    [count, props.habitTitle, props.onCountChange]
+  );
 
   const handleIncrement = () => {
     setCount((prevCount) => {
@@ -61,9 +65,9 @@ const HabitCounter = (props) => {
   return (
     <>
       <div className="frame-parent-habit">
-        <a className="exercise" id="habit-id" Exercise>
+        <Link className="exercise" id="habit-id" Exercise>
           {props.habitTitle}
-        </a>
+        </Link>
         <div className="frame-group-habit">
           <button className="wrapper" onClick={handleDecrement}>
             <div className="div">-</div>

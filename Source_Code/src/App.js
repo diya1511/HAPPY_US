@@ -9,6 +9,7 @@ import Meditationpage from './Pages/meditation/App';
 import EventDetails from './Pages/events/components/EventDetail';
 import Medinital from './Pages/meditation/components/Meditation';
 import MedDetail from './Pages/meditation/components/MeditationDetail';
+import QuotePage from './Pages/quotepage/index';
 import { Toaster } from 'react-hot-toast';
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
         <Route path="/signup" element={<SignUpBox />} />
         <Route path="/events" element={<Eventpage />} />
         <Route path="/meditation" element={<Meditationpage />} />
-        <Route path='/meditationstart' element={<Medinital />} />
-        <Route path='/medDetail' element = {<MedDetail/>} />
+        <Route path="/meditationstart" element={<Medinital />} />
+        <Route path="/medDetail" element={<MedDetail />} />
         <Route path="/eventdetails" element={<EventDetails />} />
+        <Route path="/quotes" element={<QuotePage />} />
       </Routes>
       <Toaster />
     </div>

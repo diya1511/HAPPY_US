@@ -118,12 +118,12 @@ export default function LoginBox() {
                   alt="Not Found"
                   className="spacer-vertical-2"
                 />
-
+{/* 
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4490?alt=media&token=60b48f9e-91e0-497f-8ee7-a2903f03a614"
                   alt="Not Found"
                   className="spacer-vertical-3"
-                />
+                /> */}
               </form>
               <div className="button-contained clip-contents">
                 <button onClick={handleSubmit} className="base clip-contents">

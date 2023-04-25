@@ -13,7 +13,7 @@ const Homepage = (props) => {
           <Navbar />
         </div>
         <div className="Feed">
-          <Postbox />
+          {/* <Postbox /> */}
           <Posts />
           <Posts />
           <Posts />
