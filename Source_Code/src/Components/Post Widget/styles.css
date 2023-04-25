@@ -1,0 +1,230 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame-parent-post{
+  height: 40.3125rem;
+}
+
+.image-product {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.details,
+.title {
+  position: relative;
+  line-height: 140%;
+}
+.details {
+  font-size: var(--font-size-xs);
+  color: var(--linear-grey);
+}
+.image-product-parent,
+.title-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.image-product-parent {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-5xs);
+}
+.signed-by-base-avatar-gener {
+  position: relative;
+  width: 0.06rem;
+  height: 0.06rem;
+  flex-shrink: 0;
+  display: none;
+}
+.background-icon,
+.hover-icon {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.background-icon {
+  position: absolute;
+}
+.hover-icon {
+  display: none;
+}
+.b,
+.hover-icon,
+.person {
+  position: absolute;
+}
+.b {
+  top: 0;
+  left: 81.25%;
+  line-height: 140%;
+}
+.person {
+  top: calc(50% - 8px);
+  left: calc(50% - 9px);
+  width: 1rem;
+  height: 1rem;
+}
+.avatar {
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.add-friend-btn,
+.frame-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.add-friend-btn {
+  overflow: hidden;
+  justify-content: flex-start;
+  font-size: var(--footnote-medium-size);
+  color: var(--white);
+}
+.frame-container {
+  align-self: stretch;
+  justify-content: space-between;
+}
+.use-border-utilities {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--callout-bold-size);
+  line-height: 1.63rem;
+  color: var(--linear-grey);
+}
+.imageblog-card1-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.imageblog-card1 {
+  align-self: stretch;
+  position: relative;
+  height: 24.93rem;
+  flex-shrink: 0;
+}
+.favorite-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.div {
+  position: relative;
+  line-height: 1.38rem;
+  font-weight: 500;
+}
+.favorite-parent,
+.frame-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.favorite-parent {
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.frame-div {
+  align-self: stretch;
+  justify-content: space-between;
+  font-size: var(--body-medium-size);
+  color: var(--black);
+  font-family: var(--body-medium);
+}
+.frame-group {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-5xl);
+}
+.frame-group,
+.frame-parent-post,
+.frame-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-wrapper {
+  flex: 1;
+  border-radius: var(--br-8xs);
+  background-color: var(--white);
+  box-shadow: var(--effect);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 1.56rem 3.13rem;
+}
+.frame-parent-post {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--linear-dark-blue);
+  font-family: var(--font-roboto);
+}
+
+.favorite-icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.a {
+  position: relative;
+  line-height: 1.38rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+}
+.favorite-parent,
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.favorite-parent {
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.footer-parent {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  font-size: var(--body-medium-size);
+  color: var(--black);
+  font-family: var(--body-medium);
+}
+
+.share-btn{
+  background-color: #fff;
+  border: none;
+  padding: 0;
+}
