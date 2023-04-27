@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar';
 import FreindListHome from '../../Components/Friend Box Home';
-import Postbox from '../../Components/Post Box';
+// import Postbox from '../../Components/Post Box';
 import Posts from '../../Components/Posts';
 import './styles.css';
 const Homepage = (props) => {
