@@ -13,13 +13,10 @@ const HabitCounter = (props) => {
     Math.trunc((count / maxLimit) * 100)
   );
 
-  useEffect(
-    () => {
-      localStorage.setItem(props.habitTitle, count);
-      props.onCountChange(count);
-    },
-    [count, props.habitTitle, props.onCountChange]
-  );
+  useEffect(() => {
+    localStorage.setItem(props.habitTitle, count);
+  }, [count, props.habitTitle]);
+  
 
   const handleIncrement = () => {
     setCount((prevCount) => {
@@ -39,7 +36,7 @@ const HabitCounter = (props) => {
       setCount((prevCount) => {
         const newCount = prevCount - 1;
         let newPercentComplete = Math.trunc((newCount / maxLimit) * 100);
-        if (newPercentComplete > 0) {
+        if (newPercentComplete > 100) {
           newPercentComplete = 100;
         }
         setPercentComplete(newPercentComplete);
@@ -57,7 +54,7 @@ const HabitCounter = (props) => {
 
   useEffect(() => {
     localStorage.setItem(`countList[${props.index}]`, count);
-  }, [count, props.index]);
+  }, [count]);  
 
   const counterColor = count >= maxLimit ? 'green' : 'black'; // set the color to green when the counter reaches its maximum limit
   const counterBG = count >= maxLimit ? '#c6e2e64f' : 'rgba(255, 255, 255, 0)'; // set the color to green when the counter reaches its maximum limit
@@ -89,7 +86,7 @@ const HabitCounter = (props) => {
           </button>
         </div>
         <div className="progress-bar">
-          <div className="bar">
+          <div className="total-progress-bar">
             <ProgressBar percent={percentComplete} />
           </div>
           <span>{percentComplete}%</span>

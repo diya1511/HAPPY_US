@@ -65,7 +65,7 @@
     row-gap: 60px;
   }
 
-  .card{
+  .card-alt{
     display: flex;
     flex-wrap: wrap;
     height: 289px;

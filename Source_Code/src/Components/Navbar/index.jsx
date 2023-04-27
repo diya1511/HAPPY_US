@@ -103,7 +103,7 @@ export default function Navbar() {
           {/* Navbar Meditation */}
         </div>
       </div>
-      <NavLink className="frame-62">
+      <div className="frame-62">
         <div className="group-25">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9864?alt=media&token=e2629814-ae5a-4861-b6ab-7f7d26185a06"
@@ -121,7 +121,7 @@ export default function Navbar() {
             className="more-horizontal"
           />
         </button>
-      </NavLink>
+      </div>
     </div>
   );
 }

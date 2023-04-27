@@ -4,7 +4,7 @@ import '../index.css';
 import { Link } from 'react-router-dom';
 const Card = () => {
   return (
-    <div className="card">
+    <div className="card-alt">
       <div className="cardImg"></div>
       <div className="imgHeader">
         <h3 className="imgText">Be More with less</h3>

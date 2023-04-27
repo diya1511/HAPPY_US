@@ -144,6 +144,7 @@ p {
   border: none;
   background-color: #fff;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .frame-12:hover p{
@@ -273,6 +274,30 @@ p {
   font-weight: 500;
   letter-spacing: -0.0044rem;
 }
+.meditation {
+  color: rgba(158, 158, 158, 1);
+  font-size: 1.0625rem;
+  line-height: 129%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.0044rem;
+}
+.event {
+  color: rgba(158, 158, 158, 1);
+  font-size: 1.0625rem;
+  line-height: 129%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.0044rem;
+}
+.habit-tracker-nav {
+  color: rgba(158, 158, 158, 1);
+  font-size: 1.0625rem;
+  line-height: 129%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.0044rem;
+}
 
 .frame-62 {
   display: flex;
@@ -318,5 +343,14 @@ p {
     height: 100%;
     border: none;
     background-color: rgba(246, 248, 250, 1);
+}
 
+.logout-btn{
+  border: none;
+  background-color: rgba(250, 246, 250, 1);
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

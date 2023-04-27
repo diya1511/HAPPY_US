@@ -1,8 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./styles.css";
-import Navbar from "../../Components/Navbar";
 import AdvancedCarousel from "../../Components/Carousel";
 import VideoCard from "../../Components/Video Card";
+import Navbar from "../../Components/Navbar";
 
 const EventPage = (props) => {
 
@@ -15,9 +15,6 @@ const EventPage = (props) => {
             <div className="event-feed">
                 <AdvancedCarousel/>
                 <div className="video-feed">
-                    <VideoCard/>
-                    <VideoCard/>
-                    <VideoCard/>
                     <VideoCard/>
                     <VideoCard/>
                     <VideoCard/>

@@ -10,7 +10,7 @@ const PostProfile = () => {
         src="/image-product.png"
       />
       <div className="title-parent">
-        <Link className="title" id="ProfileName">
+        <Link className="title-profile" id="ProfileName">
           Mathew Glock
         </Link>
         <Link className="details" id="PostDate">
