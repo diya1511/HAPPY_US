@@ -112,11 +112,13 @@ export default function Navbar() {
             Om Prakash
           </p>
         </div>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9866?alt=media&token=83418ff6-781f-4170-8493-ff69cb1fea62"
-          alt="Not Found"
-          className="more-horizontal"
-        />
+        <button className="logout-btn" onClick={handleLogOut}>
+          <img
+            src="/logout.svg"
+            alt="Not Found"
+            className="more-horizontal"
+          />
+        </button>
       </NavLink>
     </div>
   );
