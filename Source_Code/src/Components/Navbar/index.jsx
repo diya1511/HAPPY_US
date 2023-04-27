@@ -4,7 +4,9 @@ import useState from "react"
 import './styles.css';
 
 export default function Navbar() {
-
+  const handleLogOut = () => {
+    console.log('Log Out');
+  }
   return (
     <div className="sidebar clip-contents">
       <div className="frame-69">
@@ -37,8 +39,6 @@ export default function Navbar() {
       </div>
       <div className="frame-71">
         <div className="frame-13">
-          {/* Navbar Home */}
-
           <NavLink className="frame-12" to="/">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9837?alt=media&token=a38abc79-b19d-4f66-954b-7f2b75423f17"
@@ -47,11 +47,6 @@ export default function Navbar() {
             />
             <p className="home-1">Home</p>
           </NavLink>
-
-          {/* Navbar Home */}
-
-          {/* Navbar Habit Tracker */}
-
           <NavLink className="frame-12" to="/habit">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9840?alt=media&token=d0868572-0281-4d70-813b-799e9fdf57ab"
@@ -60,11 +55,6 @@ export default function Navbar() {
             />
             <p className="habit-tracker-nav">Habit Tracker</p>
           </NavLink>
-
-          {/* Navbar Habit Tracker */}
-
-          {/* Navbar Events */}
-
           <NavLink className="frame-12" to="/events">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9849?alt=media&token=ea049662-a8df-48ed-a55c-4244c8aadc05"
@@ -86,11 +76,6 @@ export default function Navbar() {
             />
             <p className="meditation">Meditation</p>
           </NavLink>
-
-          {/* Navbar Meditation */}
-
-          {/* Navbar Meditation */}
-
           <NavLink className="frame-12" to="/quotes">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9857?alt=media&token=4417c364-71b0-451c-ac8d-22f6ef60773c"

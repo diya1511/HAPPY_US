@@ -4,23 +4,23 @@ import "./styles.css";
 function AdvancedCarousel() {
  const data = [
     {
-      image: "/EventCarousel.png",
-      caption: "San Francisco"
+      image: '/EventCarousel.png',
+      caption: 'San Francisco',
     },
     {
-      image: "/EventCarousel.png",
-      caption: "Scotland"
+      image: '/EventCarousel.png',
+      caption: 'Scotland',
     },
   ];
 
   const captionStyle = {
     fontSize: '2em',
     fontWeight: 'bold',
-  }
+  };
   const slideNumberStyle = {
     fontSize: '20px',
     fontWeight: 'bold',
-  }
+  };
   return (
     <div className="App" style={{ display: 'flex', justifyContent: 'center' }}>
       <div style={{ textAlign: 'center', width: '100%' }}>

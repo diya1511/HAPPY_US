@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import "./styles.css";
 // import "./global.css";
 
-function VideoCard() {
+export default function VideoCard() {
   return (
     <Card
       style={{
@@ -75,4 +75,4 @@ function VideoCard() {
 // color: var(--white);
 // text-align: left;
 
-export default VideoCard;
+
