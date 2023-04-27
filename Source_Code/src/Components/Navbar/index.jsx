@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useState from "react"
 import './styles.css';
 
 export default function Navbar() {
@@ -98,7 +99,7 @@ export default function Navbar() {
             Om Prakash
           </p>
         </div>
-        <button className="logout-btn" onClick={handleLogOut}>
+        <button className="logout-btn" >
           <img
             src="/logout.svg"
             alt="Not Found"

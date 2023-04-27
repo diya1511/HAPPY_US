@@ -14,7 +14,7 @@ const HabitCounter = (props) => {
   );
 
   useEffect(
-    (props) => {
+    () => {
       localStorage.setItem(props.habitTitle, count);
       props.onCountChange(count);
     },
