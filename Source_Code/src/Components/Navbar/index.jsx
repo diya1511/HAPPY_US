@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="frame-13">
           <NavLink className="frame-12" to="/">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9837?alt=media&token=a38abc79-b19d-4f66-954b-7f2b75423f17"
+              src="/home-icon.svg"
               alt="Not Found"
               className="home"
             />
@@ -49,7 +49,7 @@ export default function Navbar() {
           </NavLink>
           <NavLink className="frame-12" to="/habit">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9840?alt=media&token=d0868572-0281-4d70-813b-799e9fdf57ab"
+              src="/habit-icon.svg"
               alt="Not Found"
               className="calendar-nav"
             />
@@ -57,7 +57,7 @@ export default function Navbar() {
           </NavLink>
           <NavLink className="frame-12" to="/events">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9849?alt=media&token=ea049662-a8df-48ed-a55c-4244c8aadc05"
+              src="/event-icon.svg"
               alt="Not Found"
               className="home-2"
             />
@@ -70,7 +70,7 @@ export default function Navbar() {
 
           <NavLink className="frame-12" to="/meditation">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9854?alt=media&token=389c4fa2-6212-40c5-a265-2c748bf71b7c"
+              src="/self-help-icon.svg"
               alt="Not Found"
               className="home-3"
             />
@@ -78,7 +78,7 @@ export default function Navbar() {
           </NavLink>
           <NavLink className="frame-12" to="/quotes">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9857?alt=media&token=4417c364-71b0-451c-ac8d-22f6ef60773c"
+              src="quotes-icon.svg"
               alt="Not Found"
               className="bar-chart"
             />

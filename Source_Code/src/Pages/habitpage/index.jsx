@@ -115,8 +115,8 @@ const Habitpage = (props) => {
           <Navbar />
         </div>
         <div className="add-btn-container">
-          <button onClick={handleButtonClick} className="send-parent">
-            <div className="send">+ Add a Habit</div>
+          <button onClick={handleButtonClick} className="add-habit-btn">
+            <div className="add-habit">+ Add a Habit</div>
           </button>
         </div>
         <div className="habit-tracker">
