@@ -39,12 +39,14 @@
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
-    "react-bootstrap-validation": "^0.1.11",
     "react-bootstrap": "^2.7.4",
+    "react-bootstrap-validation": "^0.1.11",
     "react-carousel-minimal": "^1.4.1",
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.0",
     "react-redux": "^8.0.5",
+    "react-spinners": "^0.13.8",
+    "spinners-react": "^1.0.7",
     "state": "^0.2.0",
     "validator": "^13.9.0"
   }

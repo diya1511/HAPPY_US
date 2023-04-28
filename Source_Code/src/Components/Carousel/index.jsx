@@ -1,14 +1,14 @@
 import { Carousel } from 'react-carousel-minimal';
-import "./styles.css";
+import './styles.css';
 
 function AdvancedCarousel() {
- const data = [
+  const data = [
     {
-      image: '/public/EventCarousel.png',
+      image: '/EventCarousel.png',
       caption: 'San Francisco',
     },
     {
-      image: '/public/EventCarousel.png',
+      image: '/EventCarousel.png',
       caption: 'Scotland',
     },
   ];

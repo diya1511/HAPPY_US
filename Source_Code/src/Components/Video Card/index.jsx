@@ -15,7 +15,7 @@ export default function VideoCard() {
     >
       <Card.Img
         variant="top"
-        src="/public/video-card-image.jpg"
+        src="/video-card-image.jpg"
         style={{ borderRadius: '0.3125rem' }}
       />
       <Card.Body

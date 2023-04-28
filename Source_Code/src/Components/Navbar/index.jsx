@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../Context/auth';
 import './styles.css';
+import { toast } from 'react-hot-toast';
 
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
@@ -11,7 +12,8 @@ export default function Navbar() {
       user: null,
       token: '',
     });
-    localStorage.removeItem('token');
+    localStorage.removeItem('auth');
+    toast.success('Logout Successfully');
   };
   return (
     <div className="sidebar clip-contents">
@@ -46,11 +48,7 @@ export default function Navbar() {
       <div className="frame-71">
         <div className="frame-13">
           <NavLink className="frame-12" to="/">
-            <img
-              src="/home-icon.svg"
-              alt="Not Found"
-              className="home"
-            />
+            <img src="/home-icon.svg" alt="Not Found" className="home" />
             <p className="home-1">Home</p>
           </NavLink>
           <NavLink className="frame-12" to="/habit">
@@ -62,11 +60,7 @@ export default function Navbar() {
             <p className="habit-tracker-nav">Habit Tracker</p>
           </NavLink>
           <NavLink className="frame-12" to="/events">
-            <img
-              src="/event-icon.svg"
-              alt="Not Found"
-              className="home-2"
-            />
+            <img src="/event-icon.svg" alt="Not Found" className="home-2" />
             <p className="event">Events</p>
           </NavLink>
 
@@ -75,36 +69,28 @@ export default function Navbar() {
           {/* Navbar Meditation */}
 
           <NavLink className="frame-12" to="/meditation">
-            <img
-              src="/self-help-icon.svg"
-              alt="Not Found"
-              className="home-3"
-            />
+            <img src="/self-help-icon.svg" alt="Not Found" className="home-3" />
             <p className="meditation">Meditation</p>
           </NavLink>
           <NavLink className="frame-12" to="/quotes">
-            <img
-              src="quotes-icon.svg"
-              alt="Not Found"
-              className="bar-chart"
-            />
+            <img src="quotes-icon.svg" alt="Not Found" className="bar-chart" />
             <p className="quotes">Quotes</p>
           </NavLink>
           {!auth.user ? (
             <>
               <NavLink className="frame-12" to="/signup">
-                <img src="/register.png" alt="Not Found" className="home-3" />
+                <img src="/register.png" alt="Not Found" />
                 <p className="register">Register</p>
               </NavLink>
               <NavLink className="frame-12" to="/login">
-                <img src="/user.png" alt="Not Found" className="home-3" />
+                <img src="/user.png" alt="Not Found" />
                 <p className="login">Login</p>
               </NavLink>
             </>
           ) : (
             <>
               <NavLink className="frame-12" onClick={handleLogOut} to="/login">
-                <img src="/power-off.png" alt="Not Found" className="home-3" />
+                <img src="/power-off.png" alt="Not Found" />
                 <p className="logout">Logout</p>
               </NavLink>
             </>
