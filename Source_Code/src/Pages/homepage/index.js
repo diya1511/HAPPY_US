@@ -1,11 +1,12 @@
-// import { useState } from "react";
 import React from 'react';
 import Navbar from '../../Components/Navbar';
 import FreindListHome from '../../Components/Friend Box Home';
 // import Postbox from '../../Components/Post Box';
 import Posts from '../../Components/Posts';
+import { useAuth } from '../../Context/auth';
 import './styles.css';
-const Homepage = (props) => {
+const Homepage = () => {
+  const [auth, setAuth] = useAuth();
   return (
     <div className="Background">
       <div className="contents">
@@ -21,6 +22,7 @@ const Homepage = (props) => {
         <div className="FriendList">
           <FreindListHome />
         </div>
+        {/* <pre>{JSON.stringify(auth)}</pre> */}
       </div>
     </div>
   );

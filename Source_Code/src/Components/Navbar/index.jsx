@@ -1,12 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useState from "react"
+import { useAuth } from '../../Context/auth';
 import './styles.css';
 
 export default function Navbar() {
+  const [auth, setAuth] = useAuth();
   const handleLogOut = () => {
-    console.log('Log Out');
-  }
+    setAuth({
+      ...auth,
+      user: null,
+      token: '',
+    });
+    localStorage.removeItem('token');
+  };
   return (
     <div className="sidebar clip-contents">
       <div className="frame-69">
@@ -84,8 +90,25 @@ export default function Navbar() {
             />
             <p className="quotes">Quotes</p>
           </NavLink>
-
-          {/* Navbar Meditation */}
+          {!auth.user ? (
+            <>
+              <NavLink className="frame-12" to="/signup">
+                <img src="/register.png" alt="Not Found" className="home-3" />
+                <p className="register">Register</p>
+              </NavLink>
+              <NavLink className="frame-12" to="/login">
+                <img src="/user.png" alt="Not Found" className="home-3" />
+                <p className="login">Login</p>
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink className="frame-12" onClick={handleLogOut} to="/login">
+                <img src="/power-off.png" alt="Not Found" className="home-3" />
+                <p className="logout">Logout</p>
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
       <div className="frame-62">
@@ -99,13 +122,6 @@ export default function Navbar() {
             Om Prakash
           </p>
         </div>
-        <button className="logout-btn" >
-          <img
-            src="/logout.svg"
-            alt="Not Found"
-            className="more-horizontal"
-          />
-        </button>
       </div>
     </div>
   );

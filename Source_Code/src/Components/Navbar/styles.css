@@ -148,7 +148,7 @@ p {
 }
 
 .frame-12:hover p{
-    color: black;
+    color: rgb(126, 107, 235);
 }
 
 .home {
@@ -341,12 +341,7 @@ p {
     background-color: rgba(246, 248, 250, 1);
 }
 
-.logout-btn{
-  border: none;
+.logout{
   background-color: rgba(250, 246, 250, 1);
-  width: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  font:black;
 }

@@ -4,11 +4,11 @@ import "./styles.css";
 function AdvancedCarousel() {
  const data = [
     {
-      image: '/EventCarousel.png',
+      image: '/public/EventCarousel.png',
       caption: 'San Francisco',
     },
     {
-      image: '/EventCarousel.png',
+      image: '/public/EventCarousel.png',
       caption: 'Scotland',
     },
   ];

@@ -4,20 +4,27 @@ import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import './styles.css';
-
+import { useAuth } from '../../Context/auth';
 export default function LoginBox() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const res = await axios.post('http://localhost:8080/api/v1/auth/login', {
         email,
-        password
+        password,
       });
       if (res && res.data.success) {
         toast.success(res.data.message);
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        localStorage.setItem('auth', JSON.stringify(res.data));
         navigate('/');
       } else {
         toast.error(res.data.message);
@@ -25,7 +32,6 @@ export default function LoginBox() {
     } catch (error) {
       toast.error('Something went wrong');
     }
-    
   };
 
   return (
@@ -118,7 +124,7 @@ export default function LoginBox() {
                   alt="Not Found"
                   className="spacer-vertical-2"
                 />
-{/* 
+                {/* 
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/68va6dmrmrr-119%3A4490?alt=media&token=60b48f9e-91e0-497f-8ee7-a2903f03a614"
                   alt="Not Found"
