@@ -30,6 +30,7 @@
     margin-top: 1.25rem;
     /* flex-grow: 1; */
     overflow-y: scroll;
+    overflow-x:visible;
 }
 
 .Feed::-webkit-scrollbar {

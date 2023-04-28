@@ -6,6 +6,7 @@
     gap: 1rem;
     margin-top: 3rem;
     flex: 1;
+    padding-bottom: 10rem;
 }
 
 .habit-tracker::-webkit-scrollbar {
@@ -55,10 +56,13 @@
   margin-right: 1.25rem;
 }
 
+.Navbar{
+  z-index: 1;
+}
 .add-btn-container{
   position: absolute;
-  width: 74.4rem;
-  height: 4.6875rem;
+  width: 100rem;
+  height: 4.5rem;
   right: 0px;
   bottom: 0px;
   background-color: white;
@@ -67,10 +71,42 @@
   align-items: center;
   padding-right: 3rem;
   box-shadow: var(--effect);
+  z-index: 0;
 }
 
 .calendar-habit{
   width: 0.5rem;
   height: 0.5rem;
   color: white;
+}
+
+.add-habit{
+  position: relative;
+  font-size: var(--callout-bold-size);
+  line-height: 1.31rem;
+  font-weight: 600;
+  font-family: var(--callout-bold);
+  color: var(--white);
+  text-align: left;
+}
+
+
+
+.add-habit-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.add-habit-btn {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-base);
+  background-color: var(--primary);
+  border-radius: var(--br-81xl);
+  overflow: hidden;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+}
+.add-habit-btn:hover {
+  background-color: #a989a6;
 }

@@ -29,7 +29,6 @@
   .weekdays {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
   }
   
   .weekday {
@@ -38,7 +37,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #9E9E9E;
@@ -51,8 +50,8 @@
   }
   
   .date-card {
-    width: 88px;
-    height: 117px;
+    width: 4.875rem;
+    height: 6.125rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,12 +78,12 @@
   }
   
   .day {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     font-weight: bold;
   }
   
   .month {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 5px;
