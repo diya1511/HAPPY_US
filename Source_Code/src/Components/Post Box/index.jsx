@@ -1,20 +1,18 @@
 import { EditOutlined, DeleteOutlined } from '@mui/icons-material';
 import { Box, Divider, Typography, IconButton } from '@mui/material';
-
-import './styles.css';
-import '../global.css';
 import Dropzone from 'react-dropzone';
 import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { setPosts } from "state";
-import '../WidgetWrapper';
-import '../FlexBetween';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPosts } from '../../state';
 import WidgetWrapper from '../WidgetWrapper';
+import FlexBetween from '../FlexBetween';
+import './styles.css';
+import '../global.css';
 
 const Postbox = () => {
-  // const dispatch = useDispatch();
-  // const { _id } = useSelector((state) => state.user);
-  // const token = useSelector((state) => state.token);
+  const dispatch = useDispatch();
+  const _id = useSelector((state) => state.user);
+  const token = useSelector((state) => state.token);
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState('');
@@ -24,23 +22,29 @@ const Postbox = () => {
   //=============================================================//
   // const handlePost = async () => {
   //   const formData = new FormData();
-  //   formData.append("userId", _id);
-  //   formData.append("description", post);
+  //   formData.append('userId', _id);
+  //   formData.append('description', post);
   //   if (image) {
-  //     formData.append("picture", image);
-  //     formData.append("picturePath", image.name);
+  //     formData.append('picture', image);
+  //     formData.append('picturePath', image.name);
   //   }
 
   //   const response = await fetch(`http://localhost:3001/posts`, {
-  //     method: "POST",
+  //     method: 'POST',
   //     headers: { Authorization: `Bearer ${token}` },
   //     body: formData,
   //   });
   //   const posts = await response.json();
   //   dispatch(setPosts({ posts }));
   //   setImage(null);
-  //   setPost("");
+  //   setPost('');
   // };
+
+  const handlePost = () =>{
+    console.log(image);
+    console.log(isImage);
+    console.log(post);
+  }
 
   return (
     <WidgetWrapper>
@@ -111,16 +115,16 @@ const Postbox = () => {
 
           <div className="frame-container">
             <button
-              className="image-parent"
+              className="image-parent-btn"
               onClick={() => setIsImage(!isImage)}
             >
-              <div className="image">Image</div>
+              <div className="image-txt">Image</div>
               <img className="imagesmode-icon" alt="" src="/photo icon.svg" />
             </button>
             <button
               className="send-parent"
               disabled={!post}
-              // onClick={handlePost}
+              onClick={handlePost}
             >
               <div className="send">Send</div>
               <img className="imagesmode-icon" alt="" src="/send.svg" />
