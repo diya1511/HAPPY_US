@@ -5,7 +5,7 @@ exports.requireSignIn = async (req, res, next) => {
   try {
     const decode = JWT.verify(
       req.headers.authorization,
-      process.env.REACT_APP_JWT_SECRET
+      process.env.JWT_SECRET
     );
     req.user = decode;
     next();

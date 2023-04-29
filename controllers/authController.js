@@ -69,7 +69,7 @@ exports.loginController = async (req, res) => {
     //token
     const token = await JWT.sign(
       { _id: user._id },
-      process.env.REACT_APP_JWT_SECRET,
+      process.env.JWT_SECRET,
       {
         expiresIn: '7d',
       }

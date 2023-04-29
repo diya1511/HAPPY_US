@@ -8,7 +8,7 @@ const app = express();
 // const multer = require('multer');
 dotenv.config();
 
-mongoose.connect(process.env.REACT_APP_DATABASE, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 console.log('DB connection successful!');
 
 //middlewares
