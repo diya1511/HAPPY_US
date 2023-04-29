@@ -36,7 +36,7 @@
     height: 0.06rem;
     flex-shrink: 0;
   }
-  .image {
+  .image-txt {
     position: relative;
     font-size: var(--callout-bold-size);
     line-height: 1.31rem;
@@ -51,14 +51,12 @@
     height: 1.25rem;
     flex-shrink: 0;
   }
-  .image-parent {
+  .image-parent-btn {
     cursor: pointer;
     border: 1px solid var(--accent);
     padding: var(--padding-3xs) var(--padding-base);
     background-color: var(--white);
     border-radius: var(--br-81xl);
-    width: 200px;
-    height: 50px;
     overflow: hidden;
     display: flex;
     flex-direction: row;
