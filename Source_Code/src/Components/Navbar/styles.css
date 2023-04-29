@@ -152,7 +152,7 @@ p {
 }
 
 .frame-12:hover img{
-  filter: invert(1);
+  filter: brightness(0) saturate(100%) invert(77%) sepia(68%) saturate(7014%) hue-rotate(223deg) brightness(93%) contrast(98%);
 }
 
 .frame-12 img{
@@ -306,12 +306,30 @@ p {
   letter-spacing: -0.0044rem;
 }
 
+.register{
+  color: rgba(158, 158, 158, 1);
+  font-size: 1.0625rem;
+  line-height: 129%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.0044rem;
+}
+
+.login{
+  color: rgba(158, 158, 158, 1);
+  font-size: 1.0625rem;
+  line-height: 129%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.0044rem;
+}
+
 .active *{
   color: black;
 }
 
 .active img{
-  filter: invert(1);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%) hue-rotate(21deg) brightness(97%) contrast(103%);
 }
 
 .frame-62 {

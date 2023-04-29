@@ -5,6 +5,7 @@ import FreindListHome from '../../Components/Friend Box Home';
 import Posts from '../../Components/Posts';
 import { useAuth } from '../../Context/auth';
 import './styles.css';
+import Postbox from '../../Components/Post Box';
 const Homepage = () => {
   const [auth, setAuth] = useAuth();
   return (
@@ -14,7 +15,7 @@ const Homepage = () => {
           <Navbar />
         </div>
         <div className="Feed">
-          {/* <Postbox /> */}
+          <Postbox/>
           <Posts />
           <Posts />
           <Posts />

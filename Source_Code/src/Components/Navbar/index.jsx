@@ -79,11 +79,11 @@ export default function Navbar() {
           {!auth.user ? (
             <>
               <NavLink className="frame-12" to="/signup">
-                <img src="/register.png" alt="Not Found" />
+                <img src="/register-icon.svg" alt="Not Found" />
                 <p className="register">Register</p>
               </NavLink>
               <NavLink className="frame-12" to="/login">
-                <img src="/user.png" alt="Not Found" />
+                <img src="/login-icon.svg" alt="Not Found" />
                 <p className="login">Login</p>
               </NavLink>
             </>
