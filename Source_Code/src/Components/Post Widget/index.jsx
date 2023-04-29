@@ -1,12 +1,13 @@
-import "./styles.css";
-import "../global.css";
-import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
-import FlexBetween from "../FlexBetween";
-import WidgetWrapper from "../WidgetWrapper";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setPost } from "state";
-import PostProfile from "../Post Profile";
+import './styles.css';
+import '../global.css';
+import { Box, Divider, IconButton, Typography, useTheme } from '@mui/material';
+import FlexBetween from '../FlexBetween';
+import WidgetWrapper from '../WidgetWrapper';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPost } from 'state';
+import { Link } from 'react-router-dom';
+import PostProfile from '../Post Profile';
 
 const PostWidget = ({
   postId,
@@ -28,10 +29,10 @@ const PostWidget = ({
 
   const patchLike = async () => {
     const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ userId: loggedInUserId }),
     });
@@ -54,7 +55,7 @@ const PostWidget = ({
                 width="100%"
                 height="auto"
                 alt="post"
-                style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
+                style={{ borderRadius: '0.75rem', marginTop: '0.75rem' }}
                 src={`http://localhost:3001/assets/${picturePath}`}
               />
             )}
@@ -62,13 +63,13 @@ const PostWidget = ({
           <div className="footer-parent">
             <div className="favorite-parent">
               <img className="favorite-icon" alt="" src="/favorite.svg" />
-              <a className="a" id="Likes">
+              <Link className="a" id="Likes">
                 {likeCount}
-              </a>
+              </Link>
               <img className="favorite-icon" alt="" src="/chat_bubble.svg" />
-              <a className="a" id="Comments">
+              <Link className="a" id="Comments">
                 {comments.length}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
