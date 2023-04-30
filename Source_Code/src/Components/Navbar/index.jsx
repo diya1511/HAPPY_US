@@ -90,10 +90,14 @@ export default function Navbar() {
           ) : (
             <>
               <NavLink className="frame-12" onClick={handleLogOut} to="/login">
-                <img src="/power-off.png" alt="Not Found" />
-                <p className="logout">Logout</p>
+                <img src="/logout.svg" alt="Not Found" className='logout-icon'/>
+                <p className="logout-txt">Logout</p>
               </NavLink>
-              <div className="frame-62">
+              
+            </>
+          )}
+        </div>
+        <div className="frame-62">
                 <div className="group-25">
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9864?alt=media&token=e2629814-ae5a-4861-b6ab-7f7d26185a06"
@@ -105,9 +109,6 @@ export default function Navbar() {
                   </p>
                 </div>
               </div>
-            </>
-          )}
-        </div>
       </div>
     </div>
   );
