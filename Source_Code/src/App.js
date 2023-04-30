@@ -16,9 +16,24 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Homepage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/login" element={<Loginpage />} />
-        <Route path="/habit" element={<Habitpage />} />
+        <Route
+          path="/habit"
+          element={
+            <PrivateRoute>
+              {' '}
+              <Habitpage />{' '}
+            </PrivateRoute>
+          }
+        />
         <Route path="/signup" element={<SignUpBox />} />
         <Route
           path="/events"
