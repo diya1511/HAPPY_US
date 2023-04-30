@@ -37,12 +37,13 @@ function App() {
         <Route path="/signup" element={<SignUpBox />} />
         <Route
           path="/events"
-          element={
-            <PrivateRoute>
-              {' '}
-              <EventListPage />{' '}
-            </PrivateRoute>
-          }
+          // element={
+          //   <PrivateRoute>
+          //     {' '}
+          //     <EventListPage />{' '}
+          //   </PrivateRoute>
+          // }
+          element={<EventListPage/>}
         />
         <Route path="/meditation" element={<Meditationpage />} />
         <Route path="/meditationstart" element={<Medinital />} />
