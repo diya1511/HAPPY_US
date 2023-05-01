@@ -6,7 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
 const cors = require('cors');
 const path = require('path');
-// import { fileURLToPath } from "url";
+const { fileURLToPath } = require('url');
 const morgan = require('morgan');
 const multer = require('multer');
 const postController = require('./controllers/postController');
@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage });
-app.post('/posts', upload.single('picture'), postController.createPost);
+app.post('/api/v1/posts', upload.single('picture'), postController.createPost);
 // routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/posts', postRoutes);
@@ -46,5 +46,4 @@ app.use('/api/v1/posts', postRoutes);
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
- 
 });

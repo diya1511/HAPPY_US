@@ -28,10 +28,10 @@ const PostWidget = ({
   const likeCount = Object.keys(likes).length;
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:8080/posts/${postId}/like`, {
+    const response = await fetch(`http://localhost:8080/api/v1/posts/${postId}/like`, {
       method: 'PATCH',
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `${token}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ userId: loggedInUserId }),

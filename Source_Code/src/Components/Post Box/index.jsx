@@ -20,7 +20,8 @@ const Postbox = () => {
   //==============================================================//
   //API//
   //=============================================================//
-  const handlePost = async () => {
+  const handlePost = async (e) => {
+    e.preventDefault();
     const formData = new FormData();
     formData.append('userId', _id);
     formData.append('description', post);
@@ -29,9 +30,9 @@ const Postbox = () => {
       formData.append('picturePath', image.name);
     }
 
-    const response = await fetch(`http://localhost:8080/posts`, {
+    const response = await fetch(`http://localhost:8080/api/v1/posts`, {
       method: 'POST',
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `${token}` },
       body: formData,
     });
     const posts = await response.json();
