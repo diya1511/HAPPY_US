@@ -137,4 +137,12 @@
   .add-img-text{
     color: var(--accent);
   }
+
+  .show-pass-btn{
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
