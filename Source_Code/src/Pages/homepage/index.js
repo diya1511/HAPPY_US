@@ -1,13 +1,18 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar';
 import FreindListHome from '../../Components/Friend Box Home';
-// import Postbox from '../../Components/Post Box';
+import Postbox from '../../Components/Post Box';
 import Posts from '../../Components/Posts';
 import { useAuth } from '../../Context/auth';
 import './styles.css';
-import Postbox from '../../Components/Post Box';
+
+import { useDispatch, useSelector } from 'react-redux';
+import PostsWidget from '../../Components/Posts Widget';
 const Homepage = () => {
   const [auth, setAuth] = useAuth();
+  const _id  = useSelector((state) => state.user);
+  const picturePath   = useSelector((state) => state.user);
+
   return (
     <div className="Background">
       <div className="contents">
@@ -16,9 +21,7 @@ const Homepage = () => {
         </div>
         <div className="Feed">
           <Postbox />
-          <Posts />
-          <Posts />
-          <Posts />
+          <PostsWidget userId={_id} />
         </div>
         <div className="FriendList">
           <FreindListHome />
