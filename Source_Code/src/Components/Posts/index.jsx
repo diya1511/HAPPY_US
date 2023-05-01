@@ -2,7 +2,7 @@ import "./styles.css";
 import "../global.css";
 import PostProfile from "../Post Profile";
 import Addfriend from "../Add Friend Button";
-
+import { Link } from 'react-router-dom';
 const Posts = () => {
   return (
     <div className="frame-parent-post">
@@ -19,13 +19,13 @@ const Posts = () => {
           <div className="footer-parent">
             <div className="favorite-parent">
               <img className="favorite-icon" alt="" src="/favorite.svg" />
-              <a className="a" id="Likes">
+              <Link className="a" id="Likes">
                 0
-              </a>
+              </Link>
               <img className="favorite-icon" alt="" src="/chat_bubble.svg" />
-              <a className="a" id="Comments">
+              <Link className="a" id="Comments">
                 0
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -14,4 +14,8 @@ router.get('/test', requireSignIn, isAdmin, authController.testController);
 router.get('/user-auth', requireSignIn, (req, res) => {
   res.status(200).send({ ok: true });
 });
+//forgot password
+router.post('/forgotPassword', authController.forgotPassword);
+//reset password
+router.patch('/resetPassword/:token', authController.resetPassword);
 module.exports = router;
