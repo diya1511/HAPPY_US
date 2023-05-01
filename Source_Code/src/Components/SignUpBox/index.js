@@ -10,7 +10,13 @@ export default function SignUpBox(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -112,11 +118,22 @@ export default function SignUpBox(props) {
                         <input
                           className="content clip-contents"
                           placeholder="Enter your password"
-                          type="password"
+                          type={showPassword ? 'text' : 'password'}
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           required
                         />
+                        <button
+                          type="button"
+                          onClick={handleShowPassword}
+                          className="show-pass-btn"
+                        >
+                          {showPassword ? (
+                            <img src="/hide-pass-icon.svg" alt="Not Found" />
+                          ) : (
+                            <img src="/show-pass-icon.svg" alt="Not Found" />
+                          )}
+                        </button>
                       </div>
                     </div>
                     <img

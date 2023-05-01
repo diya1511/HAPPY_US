@@ -188,9 +188,9 @@ p {
 .input-1 {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   width: 31.25rem;
   height: 3.5rem;
   padding: 0px 10px 0px;

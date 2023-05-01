@@ -10,7 +10,13 @@ export default function LoginBox() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [auth, setAuth] = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -107,13 +113,24 @@ export default function LoginBox() {
                         <input
                           className="content clip-contents"
                           placeholder="Enter your password"
-                          type={'password'}
+                          type={showPassword ? 'text' : 'password'}
                           autoComplete="new-password"
                           value={password}
                           onChange={(event) => {
                             setPassword(event.target.value);
                           }}
                         />
+                        <button
+                          type="button"
+                          onClick={handleShowPassword}
+                          className="show-pass-btn"
+                        >
+                          {showPassword ? (
+                            <img src="/hide-pass-icon.svg" alt="Not Found" />
+                          ) : (
+                            <img src="/show-pass-icon.svg" alt="Not Found" />
+                          )}
+                        </button>
                       </div>
                     </div>
 

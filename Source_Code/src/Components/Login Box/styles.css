@@ -383,3 +383,11 @@ input:focus{
     transform: scale(0.5);
   }
 }
+
+.show-pass-btn{
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
