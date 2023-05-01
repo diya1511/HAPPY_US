@@ -5,7 +5,7 @@ import FlexBetween from '../FlexBetween';
 import WidgetWrapper from '../WidgetWrapper';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPost } from 'state';
+import { setPost } from '../../state/index.js';
 import { Link } from 'react-router-dom';
 import PostProfile from '../Post Profile';
 
@@ -23,7 +23,7 @@ const PostWidget = ({
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
-  const loggedInUserId = useSelector((state) => state.user._id);
+  const loggedInUserId = useSelector((state) => state.user_id);
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
 
@@ -44,10 +44,12 @@ const PostWidget = ({
     <div className="frame-parent-post">
       <div className="frame-wrapper">
         <div className="frame-group">
-          <PostProfile />
+          <PostProfile friendId={postUserId}
+        name={name}
+        subtitle={location}
+        userPicturePath={userPicturePath}/>
           <div className="use-border-utilities">
-            Use border utilities to quickly style the border and border-radius
-            of an element. Great for images, buttons.
+          {description}
           </div>
           <div className="imageblog-card1">
             {picturePath && (
@@ -56,7 +58,7 @@ const PostWidget = ({
                 height="auto"
                 alt="post"
                 style={{ borderRadius: '0.75rem', marginTop: '0.75rem' }}
-                src={`http://localhost:3001/assets/${picturePath}`}
+                src={`${picturePath}`}
               />
             )}
           </div>

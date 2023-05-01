@@ -1,23 +1,86 @@
-import { Link } from 'react-router-dom';
+import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setFriends } from "../../state/index.js";
+import FlexBetween from "../FlexBetween";
+import UserImage from "../UserImage";
 import './styles.css';
-const PostProfile = () => {
+
+const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const _id = useSelector((state) => state.user);
+  const token = useSelector((state) => state.token);
+  // const friends = useSelector((state) => state.user.friends);
+
+  const { palette } = useTheme();
+  const primaryLight = palette.primary.light;
+  const primaryDark = palette.primary.dark;
+  const main = 'black';
+  const medium = 'grey';
+
+  // const isFriend = friends.find((friend) => friend._id === friendId);
+
+  const patchFriend = async () => {
+    const response = await fetch(
+      `http://localhost:8080/api/v1/users/${_id}/${friendId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    dispatch(setFriends({ friends: data }));
+  };
+
   return (
-    <div className="image-product-parent">
-      <img
-        className="image-product"
-        alt="profile"
-        loading="eager"
-        src="/image-product.png"
-      />
-      <div className="title-parent">
-        <Link className="title-profile" id="ProfileName">
-          Mathew Glock
-        </Link>
-        <Link className="details" id="PostDate">
-          Posted on 28 February
-        </Link>
-      </div>
-    </div>
+    <FlexBetween style={{width:'100%'}}>
+        <div className="post-profile" style={{display: 'flex', justifyContent:'flex-start', alignItems:'center'}}>
+      <FlexBetween gap="1rem" >
+        
+        <UserImage image={userPicturePath} size="55px" />
+        <Box
+          onClick={() => {
+            navigate(`/profile/${friendId}`);
+            navigate(0);
+          }}
+        >
+          <Typography
+            color={main}
+            variant="h5"
+            fontWeight="500"
+            sx={{
+              "&:hover": {
+                color: palette.primary.light,
+                cursor: "pointer",
+              },
+            }}
+          >
+            {name}
+          </Typography>
+          <Typography color={medium} fontSize="0.75rem">
+            {subtitle}
+          </Typography>
+        </Box>
+      </FlexBetween>
+          
+        </div>
+      <IconButton
+        onClick={() => patchFriend()}
+        sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
+      >
+        <PersonAddOutlined sx={{ color: primaryDark }} />
+        {/* {isFriend ? (
+          <PersonRemoveOutlined sx={{ color: primaryDark }} />
+        ) : (
+          <PersonAddOutlined sx={{ color: primaryDark }} />
+        )} */}
+      </IconButton>
+    </FlexBetween>
   );
 };
 

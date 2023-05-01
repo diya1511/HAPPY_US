@@ -3,7 +3,7 @@ import { Box, Divider, Typography, IconButton } from '@mui/material';
 import Dropzone from 'react-dropzone';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPosts } from '../../state';
+import { setPosts } from '../../state/index.js';
 import WidgetWrapper from '../WidgetWrapper';
 import FlexBetween from '../FlexBetween';
 import './styles.css';
@@ -32,7 +32,7 @@ const Postbox = () => {
 
     const response = await fetch(`http://localhost:8080/api/v1/posts`, {
       method: 'POST',
-      headers: { Authorization: `${token}` },
+      // headers: { Authorization: `${token}` },
       body: formData,
     });
     const posts = await response.json();

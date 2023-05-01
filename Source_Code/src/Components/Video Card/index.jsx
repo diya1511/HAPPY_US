@@ -2,14 +2,22 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
+import ReactPlayer from "react-player";
 import './styles.css';
 import "../global.css";
 
 export default function VideoCard() {
   const [showModal, setShowModal] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
+
+  const handleButtonClick = () => {
+    setVideoUrl("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    setShowVideo(true);
+  };
 
   return (
     <>
@@ -91,7 +99,14 @@ export default function VideoCard() {
         }}
       >
         <Modal.Header
-          style={{ backgroundColor: '#fff', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '1rem' }}
+          style={{
+            backgroundColor: '#fff',
+            color: 'black',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            margin: '1rem',
+          }}
         >
           <Modal.Title
             style={{
@@ -147,7 +162,7 @@ export default function VideoCard() {
               marginBottom: '1.5rem',
             }}
           >
-            <strong>Be more with less</strong> 
+            <strong>Be more with less</strong>
           </p>
           <div className="date-time-event">
             <p
@@ -183,7 +198,12 @@ export default function VideoCard() {
               textAlign: 'left',
             }}
           >
-            <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut mauris mauris. Nulla ut feugiat ex. Donec nec nisl sed felis tempor tincidunt non eu odio. Quisque ut mi at libero elementum placerat. Sed nec mauris vel justo blandit porttitor. Sed gravida enim vel quam sagittis, eget suscipit augue faucibus. Integer interdum sapien nec quam vestibulum, non pretium
+            <strong>Description:</strong> Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Sed ut mauris mauris. Nulla ut feugiat
+            ex. Donec nec nisl sed felis tempor tincidunt non eu odio. Quisque
+            ut mi at libero elementum placerat. Sed nec mauris vel justo blandit
+            porttitor. Sed gravida enim vel quam sagittis, eget suscipit augue
+            faucibus. Integer interdum sapien nec quam vestibulum, non pretium
           </p>
           <p
             style={{
@@ -207,12 +227,12 @@ export default function VideoCard() {
             alignItems: 'center',
             marginBottom: '1rem',
             gap: '1rem',
-            padding: '0.5rem 1rem'
+            padding: '0.5rem 1rem',
           }}
         >
           <Button
             variant="primary"
-            onClick={handleCloseModal}
+            onClick={() => handleButtonClick()}
             style={{
               fontSize: 'var(--body-text-medium-size)',
               lineHeight: '1.31rem',
@@ -232,10 +252,21 @@ export default function VideoCard() {
           >
             Register
           </Button>
-          
-          
         </Modal.Footer>
       </Modal>
+      {showVideo && (
+        <div className="video-open-bg">
+          <div className="video-open">
+            <ReactPlayer url={videoUrl} width='100%' height='80%' playing />
+          </div>
+          <Button
+            onClick={() => setShowVideo(false)}
+            style={{ position: 'absolute', right: '5rem', top: '5rem' }}
+          >
+            Close
+          </Button>
+        </div>
+      )}
     </>
   );
 }

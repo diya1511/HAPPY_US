@@ -40,7 +40,8 @@ function App() {
           element={
             <PrivateRoute>
               {' '}
-              <EventListPage />{' '}
+              <EventListPage />
+              {' '}
             </PrivateRoute>
           }
           // element={<EventListPage/>}
