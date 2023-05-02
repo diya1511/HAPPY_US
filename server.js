@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const { MongoClient, ServerApiVersion } = require('mongodb');
 const bodyParser = require('body-parser');
 const express = require('express');
 const dotenv = require('dotenv');
@@ -6,18 +7,19 @@ const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
 const cors = require('cors');
 const path = require('path');
-const { fileURLToPath } = require('url');
 const morgan = require('morgan');
 const multer = require('multer');
 const postController = require('./controllers/postController');
 const app = express();
-const userModel = require('./models/userModel');
-const postModel = require('./models/userModel.js');
-const { users, posts } = require('./data/index');
 dotenv.config();
 
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
-console.log('DB connection successful!');
+mongoose
+  .connect(
+    'mongodb+srv://HappyUs:happyus@cluster0.wc1ighv.mongodb.net/?retryWrites=true&w=majority',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log('DB connection successful!'))
+  .catch((error) => console.log(error.message));
 
 //middlewares
 app.use(cors());
@@ -37,6 +39,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
+
 const upload = multer({ storage });
 app.post('/api/v1/posts', upload.single('picture'), postController.createPost);
 // routes

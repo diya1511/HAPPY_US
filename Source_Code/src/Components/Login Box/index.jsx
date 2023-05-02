@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+
 import axios from 'axios';
 import './styles.css';
 import { useAuth } from '../../Context/auth';
@@ -32,6 +33,7 @@ export default function LoginBox() {
           token: res.data.token,
         });
         localStorage.setItem('auth', JSON.stringify(res.data));
+        window.localStorage.setItem('isLoggedIn', true);
         navigate('/');
       } else {
         toast.error(res.data.message);

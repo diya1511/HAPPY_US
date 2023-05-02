@@ -28,14 +28,17 @@ const PostWidget = ({
   const likeCount = Object.keys(likes).length;
 
   const patchLike = async () => {
-    const response = await fetch(`http://localhost:8080/api/v1/posts/${postId}/like`, {
-      method: 'PATCH',
-      headers: {
-        Authorization: `${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userId: loggedInUserId }),
-    });
+    const response = await fetch(
+      `http://localhost:8080/api/v1/posts/${postId}/like`,
+      {
+        method: 'PATCH',
+        headers: {
+          Authorization: `${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: loggedInUserId }),
+      }
+    );
     const updatedPost = await response.json();
     dispatch(setPost({ post: updatedPost }));
   };
@@ -44,13 +47,13 @@ const PostWidget = ({
     <div className="frame-parent-post">
       <div className="frame-wrapper">
         <div className="frame-group">
-          <PostProfile friendId={postUserId}
-        name={name}
-        subtitle={location}
-        userPicturePath={userPicturePath}/>
-          <div className="use-border-utilities">
-          {description}
-          </div>
+          <PostProfile
+            friendId={postUserId}
+            name={name}
+            subtitle={location}
+            userPicturePath={userPicturePath}
+          />
+          <div className="use-border-utilities">{description}</div>
           <div className="imageblog-card1">
             {picturePath && (
               <img
@@ -58,7 +61,7 @@ const PostWidget = ({
                 height="auto"
                 alt="post"
                 style={{ borderRadius: '0.75rem', marginTop: '0.75rem' }}
-                src={`${picturePath}`}
+                src={`http://localhost:8080/assets/${picturePath}`}
               />
             )}
           </div>

@@ -38,7 +38,7 @@ const Postbox = () => {
     const posts = await response.json();
     dispatch(setPosts({ posts }));
     setImage(null);
-    setPost('');
+    setPosts('');
   };
 
   // const handlePost = () =>{

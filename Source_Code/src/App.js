@@ -5,6 +5,7 @@ import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage';
 import Meditationpage from './Pages/meditation/App';
+import { useNavigate } from 'react-router-dom';
 // import EventDetails from './Pages/events/components/EventDetail';
 import Medinital from './Pages/meditation/components/Meditation';
 import MedDetail from './Pages/meditation/components/MeditationDetail';
@@ -12,18 +13,15 @@ import QuotePage from './Pages/quotepage/index';
 import { Toaster } from 'react-hot-toast';
 import EventListPage from './Pages/eventpage';
 import PrivateRoute from './Components/Routes/Private';
+
 function App() {
+  const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+  console.log(isLoggedIn, 'login');
+  const navigate = useNavigate();
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <Homepage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/" element={isLoggedIn ? <Homepage /> : <Loginpage />} />
         <Route path="/login" element={<Loginpage />} />
         <Route
           path="/habit"
@@ -40,8 +38,7 @@ function App() {
           element={
             <PrivateRoute>
               {' '}
-              <EventListPage />
-              {' '}
+              <EventListPage />{' '}
             </PrivateRoute>
           }
           // element={<EventListPage/>}

@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "../../state/index.js";
-import PostWidget from "../Post Widget";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPosts } from '../../state/index.js';
+import PostWidget from '../Post Widget';
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
-    const response = await fetch("http://localhost:8080/api/v1/posts", {
-      method: "GET",
+    const response = await fetch('http://localhost:8080/api/v1/posts', {
+      method: 'GET',
       // headers: { Authorization: `Bearer ${token}` },
     });
     const data = await response.json();
@@ -18,7 +18,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   };
 
   useEffect(() => {
-      getPosts();
+    getPosts();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

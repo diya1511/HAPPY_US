@@ -13,6 +13,7 @@ export default function Navbar() {
       token: '',
     });
     localStorage.removeItem('auth');
+    window.localStorage.removeItem('isLoggedIn');
     toast.success('Logout Successfully');
   };
   return (
@@ -90,25 +91,28 @@ export default function Navbar() {
           ) : (
             <>
               <NavLink className="frame-12" onClick={handleLogOut} to="/login">
-                <img src="/logout.svg" alt="Not Found" className='logout-icon'/>
+                <img
+                  src="/logout.svg"
+                  alt="Not Found"
+                  className="logout-icon"
+                />
                 <p className="logout-txt">Logout</p>
               </NavLink>
-              
             </>
           )}
         </div>
         <div className="frame-62">
-                <div className="group-25">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9864?alt=media&token=e2629814-ae5a-4861-b6ab-7f7d26185a06"
-                    alt="Not Found"
-                    className="ellipse-5"
-                  />
-                  <p className="om-prakash-nav" to="/">
-                    Om Prakash
-                  </p>
-                </div>
-              </div>
+          <div className="group-25">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9864?alt=media&token=e2629814-ae5a-4861-b6ab-7f7d26185a06"
+              alt="Not Found"
+              className="ellipse-5"
+            />
+            <p className="om-prakash-nav" to="/">
+              Om Prakash
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
