@@ -52,6 +52,7 @@ const PostWidget = ({
             name={name}
             subtitle={location}
             userPicturePath={userPicturePath}
+            className = 'posy-profile-margin'
           />
           <div className="use-border-utilities">{description}</div>
           <div className="imageblog-card1">
@@ -65,7 +66,7 @@ const PostWidget = ({
               />
             )}
           </div>
-          <div className="footer-parent">
+          {/* <div className="footer-parent">
             <div className="favorite-parent">
               <img className="favorite-icon" alt="" src="/favorite.svg" />
               <Link className="a" id="Likes">
@@ -76,7 +77,7 @@ const PostWidget = ({
                 {comments.length}
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

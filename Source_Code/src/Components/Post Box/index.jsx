@@ -1,7 +1,7 @@
 import { EditOutlined, DeleteOutlined } from '@mui/icons-material';
 import { Box, Divider, Typography, IconButton } from '@mui/material';
 import Dropzone from 'react-dropzone';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPosts } from '../../state/index.js';
 import WidgetWrapper from '../WidgetWrapper';
@@ -16,6 +16,15 @@ const Postbox = () => {
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState('');
+  const[postBoxName, setPostBoxName] = useState('');
+
+  useEffect(() => {
+    const auth = JSON.parse(localStorage.getItem("auth"));
+
+    if (auth && auth.user && auth.user.name) {
+      setPostBoxName(auth.user.name);
+    }
+  }, []);
 
   //==============================================================//
   //API//
@@ -50,14 +59,15 @@ const Postbox = () => {
   return (
     <WidgetWrapper>
       <div className="frame-parent">
-        <div className="frame-group">
+        <div className="frame-group-box">
+            <p className='hello-msg'>Hey {postBoxName}!</p>
           <div className="ellipse-parent">
-            <img
+            {/* <img
               className="frame-child"
               alt=""
               id="profile-pic"
               src="/profile_pic.svg"
-            />
+            /> */}
             <input
               className="frame-item"
               type="text"

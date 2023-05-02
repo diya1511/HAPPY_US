@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -13,6 +13,13 @@ export default function LoginBox() {
   const [auth, setAuth] = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const authData = localStorage.getItem('auth');
+    if (authData) {
+      navigate('/');
+    }
+  }, [setAuth]);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
