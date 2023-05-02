@@ -366,15 +366,21 @@ p {
   flex-direction: row;
   align-items: center;
   height: 100%;
+  max-width: 12rem;
+  min-width: 8.5rem;
   box-sizing: border-box;
   gap: 1rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ellipse-5 {
   width: 1.625rem;
   height: 100%;
 }
 
-.om-prakash {
+.om-prakash-nav {
   color: rgba(52, 46, 48, 1);
   font-size: 1.0625rem;
   line-height: 129%;

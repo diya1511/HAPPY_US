@@ -12,7 +12,7 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
   const navigate = useNavigate();
   const _id = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
-  // const friends = useSelector((state) => state.user.friends);
+  const friends = useSelector((state) => state.user?.friends || []);
 
   const { palette } = useTheme();
   const primaryLight = palette.primary.light;
@@ -20,7 +20,7 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
   const main = 'black';
   const medium = 'grey';
 
-  // const isFriend = friends.find((friend) => friend._id === friendId);
+  const isFriend = friends.find((friend) => friend._id === friendId);
 
   const patchFriend = async () => {
     const response = await fetch(
@@ -42,23 +42,23 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
         <div className="post-profile" style={{display: 'flex', justifyContent:'flex-start', alignItems:'center'}}>
       <FlexBetween gap="1rem" >
         
-        <UserImage image={userPicturePath} size="55px" />
+        {/* <UserImage image={userPicturePath} size="55px" /> */}
         <Box
-          onClick={() => {
-            navigate(`/profile/${friendId}`);
-            navigate(0);
-          }}
+          // onClick={() => {
+          //   navigate(`/profile/${friendId}`);
+          //   navigate(0);
+          // }}
         >
           <Typography
             color={main}
             variant="h5"
             fontWeight="500"
-            sx={{
-              "&:hover": {
-                color: palette.primary.light,
-                cursor: "pointer",
-              },
-            }}
+            // sx={{
+            //   "&:hover": {
+            //     color: palette.primary.light,
+            //     cursor: "pointer",
+            //   },
+            // }}
           >
             {name}
           </Typography>
@@ -73,12 +73,11 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
         onClick={() => patchFriend()}
         sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
       >
-        <PersonAddOutlined sx={{ color: primaryDark }} />
-        {/* {isFriend ? (
+        {isFriend ? (
           <PersonRemoveOutlined sx={{ color: primaryDark }} />
         ) : (
           <PersonAddOutlined sx={{ color: primaryDark }} />
-        )} */}
+        )}
       </IconButton>
     </FlexBetween>
   );

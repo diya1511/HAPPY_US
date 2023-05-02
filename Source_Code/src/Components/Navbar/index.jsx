@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../Context/auth';
 import './styles.css';
@@ -6,6 +6,16 @@ import { toast } from 'react-hot-toast';
 
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
+  const[navbarName, setNavbarName] = useState('');
+
+  useEffect(() => {
+    const auth = JSON.parse(localStorage.getItem("auth"));
+
+    if (auth && auth.user && auth.user.name) {
+      setNavbarName(auth.user.name);
+    }
+  }, []);
+
   const handleLogOut = () => {
     setAuth({
       ...auth,
@@ -16,6 +26,9 @@ export default function Navbar() {
     window.localStorage.removeItem('isLoggedIn');
     toast.success('Logout Successfully');
   };
+
+
+
   return (
     <div className="sidebar clip-contents">
       <div className="frame-69">
@@ -103,13 +116,13 @@ export default function Navbar() {
         </div>
         <div className="frame-62">
           <div className="group-25">
-            <img
+            {/* <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/iwa6lwcn95-226%3A9864?alt=media&token=e2629814-ae5a-4861-b6ab-7f7d26185a06"
               alt="Not Found"
               className="ellipse-5"
-            />
+            /> */}
             <p className="om-prakash-nav" to="/">
-              Om Prakash
+              {navbarName}
             </p>
           </div>
         </div>
