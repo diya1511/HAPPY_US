@@ -5,8 +5,6 @@ import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import Habitpage from './Pages/habitpage';
 import Meditationpage from './Pages/meditation/App';
-import { useNavigate } from 'react-router-dom';
-// import EventDetails from './Pages/events/components/EventDetail';
 import Medinital from './Pages/meditation/components/Meditation';
 import MedDetail from './Pages/meditation/components/MeditationDetail';
 import QuotePage from './Pages/quotepage/index';
@@ -16,8 +14,6 @@ import PrivateRoute from './Components/Routes/Private';
 
 function App() {
   const isLoggedIn = window.localStorage.getItem('isLoggedIn');
-  console.log(isLoggedIn, 'login');
-  const navigate = useNavigate();
   return (
     <>
       <Routes>

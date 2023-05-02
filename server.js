@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-// const { MongoClient, ServerApiVersion } = require('mongodb');
 const bodyParser = require('body-parser');
 const express = require('express');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
+const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
@@ -45,6 +45,7 @@ app.post('/api/v1/posts', upload.single('picture'), postController.createPost);
 // routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/posts', postRoutes);
+app.use('/api/v1/users', userRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
