@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './Context/auth';
-import storage from "redux-persist/lib/storage";
-import authReducer from "./state";
-import { configureStore } from "@reduxjs/toolkit";
+import storage from 'redux-persist/lib/storage';
+import authReducer from './state';
+import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -17,12 +17,12 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import { Provider } from "react-redux";
+} from 'redux-persist';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const persistConfig = { key: "root", storage, version: 1 };
+const persistConfig = { key: 'root', storage, version: 1 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
 const store = configureStore({
   reducer: persistedReducer,
@@ -36,13 +36,13 @@ const store = configureStore({
 
 root.render(
   <React.StrictMode>
-      <Provider store={store}>
-        <AuthProvider>
+    <Provider store={store}>
+      <AuthProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-    </AuthProvider>
-      </Provider>
+      </AuthProvider>
+    </Provider>
   </React.StrictMode>
 );
 reportWebVitals();

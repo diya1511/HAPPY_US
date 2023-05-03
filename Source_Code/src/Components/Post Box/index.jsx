@@ -2,24 +2,24 @@ import { EditOutlined, DeleteOutlined } from '@mui/icons-material';
 import { Box, Divider, Typography, IconButton } from '@mui/material';
 import Dropzone from 'react-dropzone';
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setPosts } from '../../state/index.js';
 import WidgetWrapper from '../WidgetWrapper';
-import FlexBetween from '../FlexBetween';
 import './styles.css';
 import '../global.css';
-
-const Postbox = () => {
+const Postbox = ({ picturePath }) => {
   const dispatch = useDispatch();
-  const _id = useSelector((state) => state.user);
-  const token = useSelector((state) => state.token);
+  // const _id = useSelector((state) => state.user);
+  // const token = useSelector((state) => state.token);
+  const loginResponse = JSON.parse(localStorage.getItem('auth'));
+  const _id = loginResponse.user._id;
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState('');
-  const[postBoxName, setPostBoxName] = useState('');
+  const [postBoxName, setPostBoxName] = useState('');
 
   useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem("auth"));
+    const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth && auth.user && auth.user.name) {
       setPostBoxName(auth.user.name);
@@ -29,8 +29,7 @@ const Postbox = () => {
   //==============================================================//
   //API//
   //=============================================================//
-  const handlePost = async (e) => {
-    e.preventDefault();
+  const handlePost = async () => {
     const formData = new FormData();
     formData.append('userId', _id);
     formData.append('description', post);
@@ -41,36 +40,22 @@ const Postbox = () => {
 
     const response = await fetch(`http://localhost:8080/api/v1/posts`, {
       method: 'POST',
-      // headers: { Authorization: `${token}` },
       body: formData,
     });
     const posts = await response.json();
+    console.log('Post button');
     dispatch(setPosts({ posts }));
     setImage(null);
-    setPosts('');
+    setPost('');
   };
-
-  // const handlePost = () =>{
-  //   console.log(image);
-  //   console.log(isImage);
-  //   console.log(post);
-  // }
-
   return (
     <WidgetWrapper>
       <div className="frame-parent">
         <div className="frame-group-box">
-            <p className='hello-msg'>Hey {postBoxName}!</p>
+          <p className="hello-msg">Hey {postBoxName}!</p>
           <div className="ellipse-parent">
-            {/* <img
-              className="frame-child"
-              alt=""
-              id="profile-pic"
-              src="/profile_pic.svg"
-            /> */}
             <input
               className="frame-item"
-              type="text"
               placeholder="What’s on your mind"
               onChange={(e) => setPost(e.target.value)}
               value={post}

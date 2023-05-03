@@ -22,8 +22,8 @@ const PostWidget = ({
 }) => {
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.token);
-  const loggedInUserId = useSelector((state) => state.user_id);
+  const loginResponse = JSON.parse(localStorage.getItem('auth'));
+  const loggedInUserId = loginResponse.user._id;
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
 
@@ -32,10 +32,6 @@ const PostWidget = ({
       `http://localhost:8080/api/v1/posts/${postId}/like`,
       {
         method: 'PATCH',
-        headers: {
-          Authorization: `${token}`,
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify({ userId: loggedInUserId }),
       }
     );
@@ -52,7 +48,7 @@ const PostWidget = ({
             name={name}
             subtitle={location}
             userPicturePath={userPicturePath}
-            className = 'posy-profile-margin'
+            className="posy-profile-margin"
           />
           <div className="use-border-utilities">{description}</div>
           <div className="imageblog-card1">
@@ -66,7 +62,7 @@ const PostWidget = ({
               />
             )}
           </div>
-          {/* <div className="footer-parent">
+          <div className="footer-parent">
             <div className="favorite-parent">
               <img className="favorite-icon" alt="" src="/favorite.svg" />
               <Link className="a" id="Likes">
@@ -77,7 +73,7 @@ const PostWidget = ({
                 {comments.length}
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
