@@ -11,7 +11,6 @@ export default function FriendListHome({ userId }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user?.friends || []);
 
   const getFriends = async () => {
@@ -19,9 +18,9 @@ export default function FriendListHome({ userId }) {
       `http://localhost:8080/users/${userId}/friends`,
       {
         method: 'GET',
-        headers: { Authorization: `Bearer ${token}` },
       }
     );
+    console.log(userId);
     const data = await response.json();
     dispatch(setFriends({ friends: data }));
   };
@@ -50,7 +49,6 @@ export default function FriendListHome({ userId }) {
         <div className="frame-86">
           <p className="friend-list">Friend List</p>
           <Box display="flex" flexDirection="column" gap="1.5rem">
-            {/*   IF FRIEND LIST IS EMPTY SHOW EMPTY LIST MESSAGE    */}
             {friends.length > 0 ? (
               friends.map((friend) => (
                 <PostProfile

@@ -1,10 +1,7 @@
 import './styles.css';
 import '../global.css';
-import { Box, Divider, IconButton, Typography, useTheme } from '@mui/material';
-import FlexBetween from '../FlexBetween';
-import WidgetWrapper from '../WidgetWrapper';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setPost } from '../../state/index.js';
 import { Link } from 'react-router-dom';
 import PostProfile from '../Post Profile';

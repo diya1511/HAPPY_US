@@ -1,13 +1,15 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar';
-import FreindListHome from '../../Components/Friend Box Home';
+import FriendListHome from '../../Components/Friend Box Home';
 import Postbox from '../../Components/Post Box';
 import './styles.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PostsWidget from '../../Components/Posts Widget';
 const Homepage = () => {
-  const _id  = useSelector((state) => state.user);
-  const picturePath   = useSelector((state) => state.user);
+  const loginResponse = JSON.parse(localStorage.getItem('auth'));
+  const _id = loginResponse.user._id;
+  const frnd_id = localStorage.getItem('friendId');
+  const picturePath = useSelector((state) => state.user);
   return (
     <div className="Background">
       <div className="contents">
@@ -15,13 +17,12 @@ const Homepage = () => {
           <Navbar />
         </div>
         <div className="Feed">
-          <Postbox picturePath={picturePath}/>
+          <Postbox picturePath={picturePath} />
           <PostsWidget userId={_id} />
         </div>
         <div className="FriendList">
-          <FreindListHome userId={_id} />
+          <FriendListHome userId={frnd_id} />
         </div>
-        {/* <pre>{JSON.stringify(auth)}</pre> */}
       </div>
     </div>
   );

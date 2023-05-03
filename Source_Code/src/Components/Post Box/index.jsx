@@ -9,8 +9,6 @@ import './styles.css';
 import '../global.css';
 const Postbox = ({ picturePath }) => {
   const dispatch = useDispatch();
-  // const _id = useSelector((state) => state.user);
-  // const token = useSelector((state) => state.token);
   const loginResponse = JSON.parse(localStorage.getItem('auth'));
   const _id = loginResponse.user._id;
   const [isImage, setIsImage] = useState(false);
@@ -25,10 +23,7 @@ const Postbox = ({ picturePath }) => {
       setPostBoxName(auth.user.name);
     }
   }, []);
-
-  //==============================================================//
-  //API//
-  //=============================================================//
+  
   const handlePost = async () => {
     const formData = new FormData();
     formData.append('userId', _id);
