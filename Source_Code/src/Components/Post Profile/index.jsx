@@ -16,7 +16,10 @@ const PostProfile = ({ friendId, name, subtitle }) => {
   const main = 'black';
   const medium = 'grey';
 
-  const isFriend = friends.find((friend) => friend._id === friendId);
+  const isFriend =
+    friends.length > 0
+      ? friends[0].find((friend) => friend._id === friendId)
+      : '';
 
   const patchFriend = async () => {
     const response = await fetch(
@@ -25,7 +28,7 @@ const PostProfile = ({ friendId, name, subtitle }) => {
         method: 'PATCH',
       }
     );
-    console.log('I am frnd', friendId, name);
+    // console.log('I am frnd', friendId, name);
     const data = await response.json();
     dispatch(setFriends({ friends: data }));
   };
@@ -60,16 +63,20 @@ const PostProfile = ({ friendId, name, subtitle }) => {
           </Box>
         </FlexBetween>
       </div>
-      <IconButton
-        onClick={() => patchFriend()}
-        sx={{ backgroundColor: primaryLight, p: '0.6rem' }}
-      >
-        {isFriend ? (
-          <PersonRemoveOutlined sx={{ color: primaryDark }} />
-        ) : (
-          <PersonAddOutlined sx={{ color: primaryDark }} />
-        )}
-      </IconButton>
+      {_id === friendId ? (
+        <p>Hey! You..</p>
+      ) : (
+        <IconButton
+          onClick={() => patchFriend()}
+          sx={{
+            backgroundColor: isFriend ? 'white' : 'var(--primary)',
+            p: '0.5rem',
+            color: isFriend ? 'red' : 'white',
+          }}
+        >
+          {isFriend ? <PersonRemoveOutlined /> : <PersonAddOutlined />}
+        </IconButton>
+      )}
     </FlexBetween>
   );
 };

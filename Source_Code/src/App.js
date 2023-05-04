@@ -1,8 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { useEffect } from 'react';
 import Loginpage from './Components/Login Box/index';
 import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../src/state/index.js'
+import { useAuth } from '../src/Context/auth.js';
 import Habitpage from './Pages/habitpage';
 import Meditationpage from './Pages/meditation/App';
 import Medinital from './Pages/meditation/components/Meditation';
@@ -14,6 +18,21 @@ import PrivateRoute from './Components/Routes/Private';
 
 function App() {
   const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+  const dispatch = useDispatch();
+  const [auth, setAuth] = useAuth();
+
+  useEffect(() => {
+    const authData = JSON.parse(localStorage.getItem('auth'));
+    if (authData) {
+      dispatch(
+        setLogin({
+          user: authData.user,
+          token: authData.token,
+        })
+      );
+    }
+  }, [setAuth]);
+
   return (
     <>
       <Routes>

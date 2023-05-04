@@ -2,23 +2,43 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
-import ReactPlayer from "react-player";
+import YouTube from 'react-youtube';
 import './styles.css';
 import "../global.css";
 
-export default function VideoCard() {
+export default function VideoCard( props ) {
   const [showModal, setShowModal] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  const [videoUrl, setVideoUrl] = useState("");
-
+  const opts = {
+    width: '1138',
+    height: '640',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    },
+  };
+  
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
-
+  
   const handleButtonClick = () => {
-    setVideoUrl("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     setShowVideo(true);
   };
-
+  
+  function getVideoIdFromLink(link) {
+    var videoIdRegex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|$)/;
+    var match = link.match(videoIdRegex);
+    if (match && match[1]) {
+      return match[1];
+    } else {
+      return null;
+    }
+  }
+  
+  var videoLink = props.videoLink || 'https://www.youtube.com/';
+  var videoId = getVideoIdFromLink(videoLink);
+    
+  
   return (
     <>
       <Card
@@ -257,11 +277,28 @@ export default function VideoCard() {
       {showVideo && (
         <div className="video-open-bg">
           <div className="video-open">
-            <ReactPlayer url={videoUrl} width='100%' height='80%' playing />
+          <YouTube videoId={videoId} opts={opts}/>
           </div>
           <Button
-            onClick={() => setShowVideo(false)}
-            style={{ position: 'absolute', right: '5rem', top: '5rem' }}
+            onClick={() => {setShowVideo(false); setShowModal(false);}}
+            style={{
+              fontSize: 'var(--body-text-medium-size)',
+              lineHeight: '1.31rem',
+              fontWeight: '600',
+              fontFamily: 'var(--body-text-medium)',
+              color: 'grey',
+              cursor: 'pointer',
+              border: 0,
+              padding: 'var(--padding-3xs) var(--padding-base)',
+              backgroundColor: '#fff',
+              borderRadius: 'var(--br-81xl)',
+              overflow: 'hidden',
+              justifyContent: 'flex-start',
+              gap: 'var(--gap-4xs)',
+              position: 'absolute',
+              right: '15px',
+              top: '15px',
+            }}
           >
             Close
           </Button>

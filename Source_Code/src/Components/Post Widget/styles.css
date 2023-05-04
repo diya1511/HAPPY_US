@@ -124,7 +124,8 @@
 }
 .imageblog-card1 {
   display: inline-block;
-  align-self: stretch;
+  left: 50%;
+     transform: translateX(-50%);
   position: relative;
   /* height: 24.93rem; */
   flex-shrink: 0;
@@ -169,9 +170,11 @@
   display: inline-block;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 100%;
 }
 .frame-wrapper {
   /* height: 100%; */
+  width: 100%;
   flex: 1;
   border-radius: var(--br-8xs);
   background-color: var(--white);

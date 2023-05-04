@@ -13,7 +13,7 @@ export default function Eventpage() {
         <div className="event-feed">
           <AdvancedCarousel />
           <div className="video-feed">
-            <VideoCard />
+            <VideoCard videoLink = 'https://www.youtube.com/watch?v=26U_seo0a1g'/>
             <VideoCard />
             <VideoCard />
             <VideoCard />

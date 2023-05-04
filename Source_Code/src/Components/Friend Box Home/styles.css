@@ -39,6 +39,7 @@ p {
     justify-content: flex-start;
     align-items: flex-start;
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
   }
   .friend-list {
@@ -125,4 +126,3 @@ p {
     align-items: center;
     padding: 0;
   }
-  

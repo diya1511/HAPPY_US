@@ -10,18 +10,20 @@ import Addfriend from '../Add Friend Button';
 export default function FriendListHome({ userId }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   // const [friendsData, setFriendsData] = useState([]);
+  const loginResponse = JSON.parse(localStorage.getItem('auth'));
+  const _id = loginResponse.user._id;
   const dispatch = useDispatch();
   const friends = useSelector((state) => state.user?.friends || []);
 
   const getFriends = async () => {
     const response = await fetch(
-      `http://localhost:8080/users/${userId}/friends`,
+      `http://localhost:8080/users/${_id}/friends`,
       {
         method: 'GET',
       }
     );
     const data = await response.json();
-    console.log(data.formattedFriends);
+    // console.log(data.formattedFriends);
     // setFriendsData(data.formattedFriends);
     dispatch(setFriends({ friends: data }));
   };
@@ -49,9 +51,10 @@ export default function FriendListHome({ userId }) {
       <div className="frame-74 clip-contents">
         <div className="frame-86">
           <p className="friend-list">Friend List</p>
-          <Box display="flex" flexDirection="column" gap="1.5rem">
+          <Box display="flex" flexDirection="column" gap="0.25rem" width={'100%'} className='friend-list-box'>
             {friends.length > 0 ? (
-              friends.map((friend) => (
+              friends.map((friendOuter) => (
+                friendOuter.map((friend) => 
                 <PostProfile
                   key={friend._id}
                   friendId={friend._id}
@@ -59,6 +62,7 @@ export default function FriendListHome({ userId }) {
                   subtitle={friend.occupation}
                   userPicturePath={friend.picturePath}
                 />
+                )
               ))
             ) : (
               <div className="frame-149">

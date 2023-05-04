@@ -15,12 +15,6 @@ export default function LoginBox() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  useEffect(() => {
-    const authData = localStorage.getItem('auth');
-    if (authData) {
-      navigate('/');
-    }
-  }, [setAuth]);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
