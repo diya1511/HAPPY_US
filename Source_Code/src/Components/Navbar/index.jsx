@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../Context/auth';
 import './styles.css';
+import { setLogout } from '../../state';
 import { toast } from 'react-hot-toast';
-
+import { useDispatch } from 'react-redux';
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
-  const[navbarName, setNavbarName] = useState('');
-
+  const [navbarName, setNavbarName] = useState('');
+  const dispatch = useDispatch();
   useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem("auth"));
+    const auth = JSON.parse(localStorage.getItem('auth'));
 
     if (auth && auth.user && auth.user.name) {
       setNavbarName(auth.user.name);
@@ -22,12 +23,11 @@ export default function Navbar() {
       user: null,
       token: '',
     });
+    dispatch(setLogout());
     localStorage.removeItem('auth');
     window.localStorage.removeItem('isLoggedIn');
     toast.success('Logout Successfully');
   };
-
-
 
   return (
     <div className="sidebar clip-contents">

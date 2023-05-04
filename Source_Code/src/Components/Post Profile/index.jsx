@@ -5,7 +5,7 @@ import { setFriends } from '../../state/index.js';
 import FlexBetween from '../FlexBetween';
 import './styles.css';
 
-const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
+const PostProfile = ({ friendId, name, subtitle }) => {
   const dispatch = useDispatch();
   const loginResponse = JSON.parse(localStorage.getItem('auth'));
   const _id = loginResponse.user._id;
@@ -25,7 +25,7 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
         method: 'PATCH',
       }
     );
-    console.log('I am frnd',friendId);
+    console.log('I am frnd', friendId, name);
     const data = await response.json();
     dispatch(setFriends({ friends: data }));
   };
@@ -42,10 +42,19 @@ const PostProfile = ({ friendId, name, subtitle, userPicturePath }) => {
       >
         <FlexBetween gap="1rem">
           <Box>
-            <Typography color={main} variant="h5" fontWeight="500">
+            <Typography
+              color={main}
+              variant="h5"
+              fontWeight="500"
+              style={{ marginBottom: '0.5rem' }}
+            >
               {name}
             </Typography>
-            <Typography color={medium} fontSize="0.75rem">
+            <Typography
+              color={medium}
+              fontSize="0.75rem"
+              style={{ marginBottom: '1rem' }}
+            >
               {subtitle}
             </Typography>
           </Box>

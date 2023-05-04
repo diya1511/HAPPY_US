@@ -8,7 +8,6 @@ import PostsWidget from '../../Components/Posts Widget';
 const Homepage = () => {
   const loginResponse = JSON.parse(localStorage.getItem('auth'));
   const _id = loginResponse.user._id;
-  const frnd_id = localStorage.getItem('friendId');
   const picturePath = useSelector((state) => state.user);
   return (
     <div className="Background">
@@ -21,7 +20,7 @@ const Homepage = () => {
           <PostsWidget userId={_id} />
         </div>
         <div className="FriendList">
-          <FriendListHome userId={frnd_id} />
+          <FriendListHome userId={_id} />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import Addfriend from '../Add Friend Button';
 
 export default function FriendListHome({ userId }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  // const [friendsData, setFriendsData] = useState([]);
   const dispatch = useDispatch();
   const friends = useSelector((state) => state.user?.friends || []);
 
@@ -20,8 +20,9 @@ export default function FriendListHome({ userId }) {
         method: 'GET',
       }
     );
-    console.log(userId);
     const data = await response.json();
+    console.log(data.formattedFriends);
+    // setFriendsData(data.formattedFriends);
     dispatch(setFriends({ friends: data }));
   };
 

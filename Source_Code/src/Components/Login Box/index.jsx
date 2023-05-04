@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../../state';
 import axios from 'axios';
 import './styles.css';
 import { useAuth } from '../../Context/auth';
@@ -13,7 +14,7 @@ export default function LoginBox() {
   const [auth, setAuth] = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const authData = localStorage.getItem('auth');
     if (authData) {
@@ -39,6 +40,12 @@ export default function LoginBox() {
           user: res.data.user,
           token: res.data.token,
         });
+        dispatch(
+          setLogin({
+            user: res.data.user,
+            token: res.data.token,
+          })
+        );
         localStorage.setItem('auth', JSON.stringify(res.data));
         window.localStorage.setItem('isLoggedIn', true);
         navigate('/');
