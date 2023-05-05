@@ -1,6 +1,7 @@
 import React from 'react';
 import MedStart from './components/MedStart';
 import Navbar from '../../Components/Navbar';
+import './styles.css';
 
 const App = () => {
   return (
@@ -9,7 +10,7 @@ const App = () => {
       <div className="Navbar">
         <Navbar />
       </div>
-      <div>
+      <div className='Med-Feed'>
         <MedStart></MedStart>
       </div>
       </div>

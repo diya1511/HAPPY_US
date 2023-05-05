@@ -9,10 +9,10 @@ const MedStart = () => {
         <h1 className="medHeading">Meditation</h1>
         <div className="yogaImg"></div>
       </Link>
-      <div className="excercise">
+      <Link className="excercise" to='/exercisestart'>
         <h1 className="excerHeading">Exercises</h1>
         <div className="excerImg"></div>
-      </div>
+      </Link>
         </div>       
      
   );

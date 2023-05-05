@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles.css";
 import QuoteBox from "../../Components/Quote Box";
 import Navbar from "../../Components/Navbar";
-import FreindListHome from "../../Components/Friend Box Home";
 
-const Quotepage = (props) => {
-  const [showPopup, setShowPopup] = useState(false);
+const QuotePage = (props) => {
+  const [quotes, setQuotes] = useState([]);
 
-  const handleCancel = () => {
-    setShowPopup(false);
-  };
-
-  const handleButtonClick = () => {
-    setShowPopup(true);
-  };
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      const response = await fetch("https://type.fit/api/quotes");
+      const data = await response.json();
+      const dailyQuotes = data.slice(0, 11);
+      setQuotes(dailyQuotes);
+    };
+    fetchQuotes();
+  }, []);
 
   return (
     <div className="Background">
@@ -36,31 +37,14 @@ const Quotepage = (props) => {
             </svg>
           </div>
           <div className="quote-list">
-            <QuoteBox
-              Quote={"You’re braver than you believe, and stronger than you seem, and smarter than you think."}
-              Author={"A.A. Mine"}
-              Occupation={"Author/Poet"}
-            />
-            <QuoteBox
-              Quote={"Optimism is a happiness magnet. If you stay positive good things and good people will be drawn to you"}
-              Author={"Mary Lou Retton"}
-              Occupation={"Gymnast"}
-            />
-            <QuoteBox
-              Quote={"Happiness is an attitude. We either make ourselves miserable, or happy and strong. The amount of work is the same"}
-              Author={"Francesca Reigler"}
-              Occupation={"Artist"}
-            />
-            <QuoteBox
-              Quote={"It’s not whether you get knocked down, it’s whether you get up"}
-              Author={"Vince Lombardi"}
-              Occupation={"Football player"}
-            />
-            <QuoteBox
-              Quote={"The happiness of your life depends upon the quality of your thoughts."}
-              Author={"Marcus Aurelius"}
-              Occupation={"Roman Emporer"}
-            />
+            {quotes.map((quote) => (
+              <QuoteBox
+                key={quote.id}
+                Quote={quote.text}
+                Author={quote.author || "Unknown"}
+                Occupation={quote.source || ""}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -68,4 +52,4 @@ const Quotepage = (props) => {
   );
 };
 
-export default Quotepage;
+export default QuotePage;

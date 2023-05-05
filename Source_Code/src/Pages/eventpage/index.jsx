@@ -1,9 +1,30 @@
+import { useState, useEffect } from 'react';
 import Navbar from '../../Components/Navbar';
 import AdvancedCarousel from '../../Components/Carousel';
 import VideoCard from '../../Components/Video Card';
 import './styles.css';
 
-export default function Eventpage() {
+const Eventpage = () => {
+  const [videoLinks, setVideoLinks] = useState([]);
+
+  useEffect(() => {
+    const fetchVideoLinks = async () => {
+      try {
+        const response = await fetch(
+          'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=motivational%20videos&type=video&regionCode=US&key=AIzaSyCTG5ymIwOz5KZ9uP6l4QDKqHhzrld-mAg'
+        );
+        const data = await response.json();
+        const links = data.items.map((item) => {
+          return 'https://www.youtube.com/watch?v=' + item.id.videoId;
+        });
+        setVideoLinks(links);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchVideoLinks();
+  }, []);
+
   return (
     <div className="Background">
       <div className="contents">
@@ -13,17 +34,15 @@ export default function Eventpage() {
         <div className="event-feed">
           <AdvancedCarousel />
           <div className="video-feed">
-            <VideoCard videoLink = 'https://www.youtube.com/watch?v=26U_seo0a1g'/>
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
+            {videoLinks.map((link) => (
+              <VideoCard videoLink={link} key={link} />
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Eventpage;
+//AIzaSyCTG5ymIwOz5KZ9uP6l4QDKqHhzrld-mAg

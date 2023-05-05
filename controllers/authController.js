@@ -173,6 +173,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      friends: user.friends,
     },
     token,
   });

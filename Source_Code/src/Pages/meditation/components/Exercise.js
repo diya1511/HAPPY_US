@@ -3,14 +3,14 @@ import { useState } from "react";
 import data from '../data.js'
 import Tours from './Tours.js'
 import {Route,Routes } from "react-router-dom";
-import MeditationDetail from './MeditationDetail.js'
+import ExerciseDetail from './ExerciseDetail.js'
 import './Meditation.css'
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 
  
-const App = () => {
+const ExerciseStart = () => {
 
   const [tours,setTour] = useState(data);
 
@@ -42,7 +42,7 @@ const App = () => {
       <Tours tours ={tours} removeTour = {removeTour}></Tours>
 
       <Routes>
-        <Route path='/medDetail' element={<MeditationDetail></MeditationDetail>}></Route>
+        <Route path='/exeDetail' element={<ExerciseDetail></ExerciseDetail>}></Route>
       </Routes>
 
     </div>
@@ -50,4 +50,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ExerciseStart;

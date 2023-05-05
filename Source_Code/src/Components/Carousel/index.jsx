@@ -5,11 +5,11 @@ function AdvancedCarousel() {
   const data = [
     {
       image: '/EventCarousel.png',
-      caption: 'San Francisco',
+      caption: ' ',
     },
     {
       image: '/EventCarousel.png',
-      caption: 'Scotland',
+      caption: ' ',
     },
   ];
 

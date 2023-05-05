@@ -47,4 +47,8 @@
     color: var(--text-color);
     font-family: var(--callout-medium);
   }
+
+  .youre-braver-than-you-believe-parent:hover{
+    box-shadow: 0 0 100px #c7a2c342;
+  }
   

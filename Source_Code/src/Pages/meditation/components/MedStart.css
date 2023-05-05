@@ -27,71 +27,80 @@ body{
     height: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .containermeditation{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     /* position: relative; */
 }
 
 .yoga{
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    left: 448px;
-    top: 240px;
+    /* position: absolute; */
+    width: 30vw;
+    height: 50vh;
+    left: 28rem;
+    top: 15rem;
 
     /* White */
 
     background: #FFFFFF;
     /* Primary */
 
-    border: 1px solid #C7A2C3;
+    border: 0.0625rem solid #C7A2C3;
     /* 1 */
 
-    box-shadow: 0px 100px 80px rgba(141, 145, 160, 0.0196802), 0px 41.7776px 33.4221px rgba(141, 145, 160, 0.0282725), 0px 22.3363px 17.869px rgba(141, 145, 160, 0.035), 0px 12.5216px 10.0172px rgba(141, 145, 160, 0.0417275), 0px 6.6501px 5.32008px rgba(141, 145, 160, 0.0503198), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.07);
-    border-radius: 5px;
+    box-shadow: 0rem 6.25rem 5rem rgba(141, 145, 160, 0.0196802), 0rem 2.6111rem 2.0889rem rgba(141, 145, 160, 0.0282725), 0rem 1.396rem 1.1168rem rgba(141, 145, 160, 0.035), 0rem 0.7826rem 0.6261rem rgba(141, 145, 160, 0.0417275), 0rem 0.4156rem 0.3325rem rgba(141, 145, 160, 0.0503198), 0rem 0.173rem 0.1384rem rgba(0, 0, 0, 0.07);
+    border-radius: 0.3125rem;
 }
 
 
 .excercise{
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    left: 944px;
-    top: 240px;
+    /* position: absolute; */
+    width: 30vw;
+    height: 50vh;
+    /* left: 59rem;
+    top: 15rem; */
 
     /* White */
 
     background: #FFFFFF;
     /* Accent */
 
-    border: 1px solid #51C0B7;
+    border: 0.0625rem solid #51C0B7;
     /* 1 */
 
-    box-shadow: 0px 100px 80px rgba(141, 145, 160, 0.0196802), 0px 41.7776px 33.4221px rgba(141, 145, 160, 0.0282725), 0px 22.3363px 17.869px rgba(141, 145, 160, 0.035), 0px 12.5216px 10.0172px rgba(141, 145, 160, 0.0417275), 0px 6.6501px 5.32008px rgba(141, 145, 160, 0.0503198), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.07);
-    border-radius: 5px;
+    box-shadow: 0rem 6.25rem 5rem rgba(141, 145, 160, 0.0196802), 0rem 2.6111rem 2.0889rem rgba(141, 145, 160, 0.0282725), 0rem 1.396rem 1.1168rem rgba(141, 145, 160, 0.035), 0rem 0.7826rem 0.6261rem rgba(141, 145, 160, 0.0417275), 0rem 0.4156rem 0.3325rem rgba(141, 145, 160, 0.0503198), 0rem 0.173rem 0.1384rem rgba(0, 0, 0, 0.07);
+    border-radius: 0.3125rem;
 }
 
 .medHeading{
-    position: absolute;
-    width: 246px;
-    height: 57px;
-    left: 77px;
-    top: 100px;
+    /* position: absolute; */
+    width: 15.375rem;
+    height: 3.5625rem;
+    /* left: 4.8125rem;
+    top: 6.25rem; */
 
     font-family: 'SF Pro';
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 57px;
+    font-size: 3rem;
+    line-height: 3.5625rem;
     letter-spacing: 0.025em;
 
     /* Primary */
@@ -100,17 +109,17 @@ body{
 }
 
 .excerHeading{
-    position: absolute;
-    width: 219px;
-    height: 57px;
-    left: 90.5px;
-    top: 100px;
+    /* position: absolute; */
+    width: 13.6875rem;
+    height: 3.5625rem;
+    /* left: 5.6563rem; */
+    /* top: 6.25rem; */
 
     font-family: 'SF Pro';
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 57px;
+    font-size: 3rem;
+    line-height: 3.5625rem;
     letter-spacing: 0.025em;
 
     /* Accent */
@@ -120,22 +129,22 @@ body{
 }
 
 .yogaImg{
-    position: absolute;
-    width: 193px;
-    height: 193px;
-    left: 205px;
-    top: 205px;
+    /* position: absolute; */
+    width: 12.0625rem;
+    height: 12.0625rem;
+    /* left: 12.8125rem;
+    top: 12.8125rem; */
 
     opacity: 0.9;
     background-image: url("/public/Yoga with face masks-amico 1.png");
 }
 
 .excerImg{
-    position: absolute;
-    width: 193px;
-    height: 193px;
-    left: 205px;
-    top: 205px;
+    /* position: absolute; */
+    width: 12.0625rem;
+    height: 12.0625rem;
+    /* left: 12.8125rem;
+    top: 12.8125rem; */
 
     opacity: 0.9;
     background-image: url("/public/Running wild-rafiki 1.png");

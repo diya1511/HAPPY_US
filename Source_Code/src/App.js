@@ -5,7 +5,7 @@ import Loginpage from './Components/Login Box/index';
 import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import { useDispatch } from 'react-redux';
-import { setLogin } from '../src/state/index.js'
+import { setLogin, setFriends } from '../src/state/index.js'
 import { useAuth } from '../src/Context/auth.js';
 import Habitpage from './Pages/habitpage';
 import Meditationpage from './Pages/meditation/App';
@@ -28,7 +28,8 @@ function App() {
         setLogin({
           user: authData.user,
           token: authData.token,
-        })
+        }),
+        setFriends({friends :authData.user.friends})
       );
     }
   }, [setAuth]);

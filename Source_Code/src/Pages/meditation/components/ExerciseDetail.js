@@ -3,7 +3,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 import './MeditationDetail.css';
 import { Link } from 'react-router-dom';
 
-const MeditationDetail = () => {
+const ExerciseDetail = () => {
   return (
     <div className="container-meditation">
       
@@ -79,4 +79,4 @@ const MeditationDetail = () => {
   );
 };
 
-export default MeditationDetail;
+export default ExerciseDetail;

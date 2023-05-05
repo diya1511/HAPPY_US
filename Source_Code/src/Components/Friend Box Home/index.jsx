@@ -13,7 +13,17 @@ export default function FriendListHome({ userId }) {
   const loginResponse = JSON.parse(localStorage.getItem('auth'));
   const _id = loginResponse.user._id;
   const dispatch = useDispatch();
-  const friends = useSelector((state) => state.user?.friends || []);
+  let friends = useSelector((state) => state.user?.friends || []);
+
+if (friends.length === 0) {
+  const storedFriends = JSON.parse(localStorage.getItem('friends'));
+  // console.log('S',storedFriends)
+  // console.log('F',friends)
+  if (storedFriends) {
+    friends = Object.values(storedFriends);
+  }
+  // console.log(friends)
+}
 
   const getFriends = async () => {
     const response = await fetch(
@@ -39,6 +49,7 @@ export default function FriendListHome({ userId }) {
   }, []);
 
   useEffect(() => {
+    // console.log(friends)
     getFriends();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
