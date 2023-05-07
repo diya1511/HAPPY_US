@@ -42,7 +42,7 @@ export default function Navbar() {
             <p className="happy-us">Happy Us</p>
           </div>
         </div>
-        <div className="frame-66">
+        {/* <div className="frame-66">
           <div className="frame-2">
             <div className="frame-20">
               <img
@@ -57,7 +57,7 @@ export default function Navbar() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="frame-71">
         <div className="frame-13">
