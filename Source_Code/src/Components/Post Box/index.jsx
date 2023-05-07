@@ -4,6 +4,7 @@ import Dropzone from 'react-dropzone';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setPosts } from '../../state/index.js';
+import toast from 'react-hot-toast';
 import WidgetWrapper from '../WidgetWrapper';
 import './styles.css';
 import '../global.css';
@@ -15,6 +16,7 @@ const Postbox = ({ picturePath }) => {
   const [image, setImage] = useState(null);
   const [post, setPost] = useState('');
   const [postBoxName, setPostBoxName] = useState('');
+  const [fileError, setFileError] = useState(false);
 
   useEffect(() => {
     const auth = JSON.parse(localStorage.getItem('auth'));
@@ -24,6 +26,12 @@ const Postbox = ({ picturePath }) => {
     }
   }, []);
   
+  useEffect(() => {
+    if (fileError){
+      toast.error('Please select only images');
+    }
+  },[fileError])
+
   const handlePost = async () => {
     const formData = new FormData();
     formData.append('userId', _id);
@@ -43,6 +51,16 @@ const Postbox = ({ picturePath }) => {
     setImage(null);
     setPost('');
   };
+
+  const handleDrop = (acceptedFiles) => {
+    if (acceptedFiles.length > 0 && acceptedFiles[0].type.startsWith('image/')) {
+      setImage(acceptedFiles[0]);
+      setFileError(false);
+    } else {
+      setFileError(true);
+    }
+  };
+
   return (
     <WidgetWrapper>
       <div className="frame-parent">
@@ -65,11 +83,11 @@ const Postbox = ({ picturePath }) => {
                 mt="1rem"
                 p="1rem"
               >
-                <Dropzone
-                  acceptedFiles=".jpg,.jpeg,.png"
-                  multiple={false}
-                  onDrop={(acceptedFiles) => setImage(acceptedFiles[0])}
-                >
+                 <Dropzone
+        accept="image/*"
+        multiple={false}
+        onDrop={handleDrop}
+      >
                   {({ getRootProps, getInputProps }) => (
                     <div>
                       <Box
