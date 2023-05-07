@@ -80,7 +80,7 @@ if (friends.length === 0) {
         </FlexBetween>
       </div>
       {_id === friendId ? (
-        <p>Hey! You..</p>
+        <p className='your-post'>Hey! You..</p>
       ) : (
         <IconButton
           onClick={() => patchFriend()}
