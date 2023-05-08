@@ -5,7 +5,7 @@ import Loginpage from './Components/Login Box/index';
 import SignUpBox from './Components/SignUpBox/index';
 import Homepage from './Pages/homepage/index';
 import { useDispatch } from 'react-redux';
-import { setLogin, setFriends } from '../src/state/index.js'
+import { setLogin, setFriends } from '../src/state/index.js';
 import { useAuth } from '../src/Context/auth.js';
 import Habitpage from './Pages/habitpage';
 import Meditationpage from './Pages/meditation/App';
@@ -14,6 +14,7 @@ import MedDetail from './Pages/meditation/components/MeditationDetail';
 import QuotePage from './Pages/quotepage/index';
 import { Toaster } from 'react-hot-toast';
 import EventListPage from './Pages/eventpage';
+import ExercisePage from './Pages/meditation/components/Exercise.js';
 import PrivateRoute from './Components/Routes/Private';
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
           user: authData.user,
           token: authData.token,
         }),
-        setFriends({friends :authData.user.friends})
+        setFriends({ friends: authData.user.friends })
       );
     }
   }, [setAuth]);
@@ -62,7 +63,7 @@ function App() {
         <Route path="/meditation" element={<Meditationpage />} />
         <Route path="/meditationstart" element={<Medinital />} />
         <Route path="/medDetail" element={<MedDetail />} />
-        {/* <Route path="/eventdetails" element={<EventDetails />} /> */}
+        <Route path="/exercisestart" element={<ExercisePage />} />
         <Route path="/quotes" element={<QuotePage />} />
       </Routes>
       <Toaster />
