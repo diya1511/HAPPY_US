@@ -34,7 +34,7 @@ const ExerciseStart = () => {
   return(
 
     <div className="contents card-list">
-      <Link className="arrowBtn" to='/exercisestart'>
+      <Link className="arrowBtn" to='/meditation'>
         <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
       </Link>
     <div className="app">

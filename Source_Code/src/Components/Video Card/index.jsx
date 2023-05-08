@@ -46,12 +46,14 @@ export default function VideoCard( props ) {
           width: '25%',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.25rem',
+          justifyContent: 'space-between',
+          // gap: '0.25rem',
+          height: 'auto',
         }}
       >
         <Card.Img
           variant="top"
-          src="/video-card-image.jpg"
+          src={props.thumbnail}
           style={{ borderRadius: '0.3125rem' }}
         />
         <Card.Body
@@ -59,8 +61,10 @@ export default function VideoCard( props ) {
             border: 'black',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.25rem',
+            justifyContent: 'space-between',
+            // gap: '0.25rem',
             padding: '0.25rem',
+            height: '100%',
           }}
         >
           <Card.Title
@@ -73,10 +77,10 @@ export default function VideoCard( props ) {
               textAlign: 'left',
             }}
           >
-            Be more with less
+            {props.title}
           </Card.Title>
           <Card.Text>
-            Some quick example text..&nbsp;&nbsp;&nbsp;&nbsp;-Olivia Rhye
+            {props.channelName}
           </Card.Text>
           <Button
             variant="primary"

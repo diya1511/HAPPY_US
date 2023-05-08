@@ -10,13 +10,28 @@ const Eventpage = () => {
   useEffect(() => {
     const fetchVideoLinks = async () => {
       try {
-        const response = await fetch(
-          'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=motivational%20videos&type=video&regionCode=US&key=AIzaSyCTG5ymIwOz5KZ9uP6l4QDKqHhzrld-mAg'
-        );
+        const motivationalWords =  [
+          'motivational videos',
+          'inspirational speeches',
+          'self-improvement',
+          'personal growth',
+          'success stories',
+          'mindfulness',
+          'gratitude',
+          'mental health',
+          'positive affirmations',
+        ];
+        const randomWord = motivationalWords[Math.floor(Math.random() * motivationalWords.length)];
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${randomWord}%20videos&type=video&regionCode=UK&key=AIzaSyCTG5ymIwOz5KZ9uP6l4QDKqHhzrld-mAg`;
+        
+        const response = await fetch(apiUrl);
         const data = await response.json();
-        const links = data.items.map((item) => {
-          return 'https://www.youtube.com/watch?v=' + item.id.videoId;
-        });
+        const links = data.items.map((item) => ({
+          title: item.snippet.title,
+          channelName: item.snippet.channelTitle,
+          thumbnail: item.snippet.thumbnails.medium.url,
+          videoLink: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+        }));
         setVideoLinks(links);
       } catch (error) {
         console.log(error);
@@ -24,6 +39,7 @@ const Eventpage = () => {
     };
     fetchVideoLinks();
   }, []);
+  
 
   return (
     <div className="Background">
@@ -35,7 +51,13 @@ const Eventpage = () => {
           <AdvancedCarousel />
           <div className="video-feed">
             {videoLinks.map((link) => (
-              <VideoCard videoLink={link} key={link} />
+              <VideoCard
+                key={link.videoLink}
+                videoLink={link.videoLink}
+                title={link.title}
+                channelName={link.channelName}
+                thumbnail={link.thumbnail}
+              />
             ))}
           </div>
         </div>
@@ -45,4 +67,5 @@ const Eventpage = () => {
 };
 
 export default Eventpage;
+
 //AIzaSyCTG5ymIwOz5KZ9uP6l4QDKqHhzrld-mAg

@@ -26,14 +26,13 @@
 
 .video-feed {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* flex-basis: 33.33%; */
-    row-gap: 5rem;
-    column-gap: 1rem;
-    flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  row-gap: 5rem;
+  column-gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.video-feed>* {
-    flex-basis: 25%;
+.video-feed >* {
+   height: auto;
 }
