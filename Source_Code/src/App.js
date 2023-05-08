@@ -16,6 +16,7 @@ import { Toaster } from 'react-hot-toast';
 import EventListPage from './Pages/eventpage';
 import ExercisePage from './Pages/meditation/components/Exercise.js';
 import PrivateRoute from './Components/Routes/Private';
+import ExerciseDetail from './Pages/meditation/components/ExerciseDetail';
 
 function App() {
   const isLoggedIn = window.localStorage.getItem('isLoggedIn');
@@ -63,6 +64,7 @@ function App() {
         <Route path="/meditation" element={<Meditationpage />} />
         <Route path="/meditationstart" element={<Medinital />} />
         <Route path="/medDetail" element={<MedDetail />} />
+        <Route path="/exeDetail" element={<ExerciseDetail/>} />
         <Route path="/exercisestart" element={<ExercisePage />} />
         <Route path="/quotes" element={<QuotePage />} />
       </Routes>

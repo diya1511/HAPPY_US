@@ -6,75 +6,82 @@ import { Link } from 'react-router-dom';
 const ExerciseDetail = () => {
   return (
     <div className="container-meditation">
-      
+      <div className="contents">
+        <Link className="arrowBtn" to="/exercisestart">
+          <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
+        </Link>
+        <div className="med-details-Feed">
+          <div className="sliderImg"></div>
 
-      <div className='contents'>
-        <Link className="arrowBtn" to='/meditationstart'>
-        <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
-      </Link>
-      <div className='med-details-Feed'>
-        <div className="sliderImg"></div>
+          <div className="mainHeading">
+            <h1 className="main-head-text">Beginner Exercises</h1>
+          </div>
 
-      <div className="mainHeading">
-        <h1 className='main-head-text'>Meditation for beginners</h1>
+          <div className="mainPara">
+            <p>
+              Exercise is an essential aspect of maintaining good health, and
+              incorporating it into your daily routine can help you stay fit and
+              active. Whether you're a seasoned athlete or just starting out,
+              there are many different types of exercises you can do to stay in
+              shape, from cardio to strength training and everything in between.
+              The key is finding an exercise routine that works for you and that
+              you enjoy, so that you'll be motivated to stick with it over the
+              long term. One of the biggest benefits of exercise is its impact
+              on your mental health. Studies have shown that regular exercise
+              can help reduce symptoms of anxiety and depression, improve mood,
+              and boost self-esteem. Exercise also releases endorphins, which
+              are natural chemicals in the body that help to reduce pain and
+              increase feelings of happiness and well-being. So, not only does
+              exercise make you physically healthier, but it can also have a
+              positive impact on your mental and emotional well-being.
+            </p>
+          </div>
+
+          <div className="subHeading">
+            <h3>What is Exercise?</h3>
+          </div>
+
+          <div className="subPara">
+            <p>
+              When it comes to choosing an exercise routine, it's important to
+              consider your personal fitness goals. Are you looking to build
+              strength, lose weight, or simply improve your overall fitness
+              level? Different types of exercises will help you achieve
+              different goals, so it's important to find a routine that aligns
+              with what you're looking to achieve. And remember, it's never too
+              late to start exercising – even if you've been inactive for a
+              while, incorporating exercise into your daily routine can have a
+              significant impact on your health and well-being. Exercising is
+              not just about building muscles and improving your physique. It is
+              also about taking care of your mental health. When you exercise,
+              your brain releases endorphins, which are feel-good chemicals that
+              can help reduce stress and anxiety. Exercise can also help you
+              sleep better, which is important for both your physical and mental
+              health. Regular exercise has been shown to reduce symptoms of
+              depression and anxiety and improve overall mood. If you're new to
+              exercise, it can be overwhelming to know where to start. The most
+              important thing is to find something you enjoy and start slowly.
+              You don't need to go to a gym or buy expensive equipment to
+              exercise. Simple activities like walking, jogging, or cycling can
+              be effective for improving your health. You can also try
+              bodyweight exercises like push-ups, squats, and lunges, which can
+              be done at home without any equipment. It's important to set
+              realistic goals when it comes to exercise. Don't expect to see
+              results overnight, and don't push yourself too hard too soon.
+              Start with small goals and gradually increase the intensity and
+              duration of your workouts. It's also important to listen to your
+              body and take rest days when you need them. Overexertion can lead
+              to injury and burnout, so it's important to find a balance between
+              pushing yourself and taking care of yourself. Finally, it's
+              important to remember that exercise is just one part of a healthy
+              lifestyle. In addition to regular physical activity, you should
+              also focus on eating a healthy diet, getting enough sleep, and
+              managing stress. By taking care of your body and mind, you can
+              live a happier, healthier life.
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div className="mainPara">
-        <p>
-          Meditation is something anyone can do, anytime, anywhere — even
-          someplace loud. It’s easy to learn and involves some pretty basic
-          techniques. Like anything new, the more we meditate, the more
-          comfortable we’ll get spending time with our mind. It doesn’t take
-          long to feel the benefits of a regular meditation practice. Research
-          shows that Headspace can reduce stress in 10 days. And thousands of
-          studies have shown mindfulness and meditation can positively impact
-          mental and physical health. So, no matter why we want to start
-          meditating — to feel less stressed, get better sleep, be more focused,
-          or improve relationships — every meditation is one step closer to
-          building healthier habits for a happier mind. We’ll get started
-          together. Then by the end of this article, we’ll be more familiar with
-          how to meditate and be ready to practice on our own.
-        </p>
-      </div>
-
-      <div className="subHeading">
-        <h3>What is Meditation?</h3>
-      </div>
-
-      <div className="subPara">
-        <p>
-          Meditation is the practice of intentionally spending time with our
-          mind. We take time out of our busy days to sit, breathe, and try to
-          remain focused on our breath. Doing this helps us become more aware of
-          our thoughts, act more compassionately toward ourselves and others,
-          and connect with the present moment. People might associate meditation
-          with sitting in silence and stopping all of our thoughts and feelings
-          to become calm. But that’s not really how the mind works, and neither
-          does meditation. Rather than trying to stop our thoughts, we practice
-          letting thoughts come and go. How do we do this? Let’s think of
-          thoughts like traffic in the mind, always zipping by. Sometimes we see
-          a flashy car and chase after it, kind of like when we get caught up in
-          analyzing or judging a thought or when we get lost in a daydream.
-          Other times, we see a roadblock ahead and try to resist it, like we do
-          when we think or feel something uncomfortable. Meditation trains us to
-          notice the traffic without chasing or fighting it — just to let the
-          thought come. Then gently shift our focus away from it and back onto
-          our breath — to let the thought go. The more we practice, the more we
-          can see thoughts for what they are: just thoughts. It’ll get easier to
-          let them go and “get out of our heads” to be more engaged in what
-          we’re doing, whether we’re spending time with family, making time for
-          self-care, or working against a deadline.
-        </p>
-      </div>
-      </div>
-      
-      </div>
-
-      
-
-      {/* <Routes>
-          <Route path='/meditation' element ={<Meditation></Meditation>}></Route>
-      </Routes> */}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 
-function Card({id, image,info,price,name, removeTour})  {
+function Card({id, image,info,price,name, removeTour, type})  {
     const[readmore,setReadmore] = useState(false);
     
     const description = readmore ? info :`${info.substring(0,200)}....`;
@@ -26,7 +26,7 @@ function Card({id, image,info,price,name, removeTour})  {
                 <div className="description">
                     {description}
 
-                    <NavLink to="/medDetail" className="read-more">read more</NavLink>
+                    <NavLink to = {type} className="read-more">read more</NavLink>
                     
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import data from '../data.js'
-import Tours from './Tours.js'
+import exeData from '../exeData.js'
+import ExeTours from './exeTours.js'
 import {Route,Routes } from "react-router-dom";
 import ExerciseDetail from './ExerciseDetail.js'
 import './Meditation.css'
@@ -12,8 +12,7 @@ import { Link } from 'react-router-dom';
  
 const ExerciseStart = () => {
 
-  const [tours,setTour] = useState(data);
-
+  const [tours,setTour] = useState(exeData);
 
   function removeTour(id){
     const newTours = tours.filter(tours=>tours.id!==id);
@@ -25,7 +24,7 @@ const ExerciseStart = () => {
       <div className="refresh">
         <h2> No Events Left</h2>
 
-        <button className="btn-white" onClick={ ()=>setTour(data) }>
+        <button className="btn-white" onClick={ ()=>setTour(exeData) }>
           Refresh
         </button>
       </div>
@@ -35,12 +34,12 @@ const ExerciseStart = () => {
   return(
 
     <div className="contents card-list">
-      <Link className="arrowBtn" to='/meditation'>
+      <Link className="arrowBtn" to='/exercisestart'>
         <AiOutlineArrowLeft className="arrow"></AiOutlineArrowLeft>
       </Link>
     <div className="app">
-      <Tours tours ={tours} removeTour = {removeTour}></Tours>
-
+      {/* <exeTours tours ={tours} removeTour = {removeTour}></exeTours> */}
+      <ExeTours tours={tours} removeTour= {removeTour}></ExeTours>
       <Routes>
         <Route path='/exeDetail' element={<ExerciseDetail></ExerciseDetail>}></Route>
       </Routes>
